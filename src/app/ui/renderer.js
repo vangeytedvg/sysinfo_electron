@@ -23,7 +23,7 @@ async function getCpuSpeed() {
     const speed = await app.cpuSpeed("ee");
     const ghz = speed.speed;
     console.log("SPEED", speed);
-    CPU_SPEED_LABEL.innerText = `${speed.max}Ghz`;
+    CPU_SPEED_LABEL.innerText = `${speed.max}Ghz`; 
 }
 
 /**

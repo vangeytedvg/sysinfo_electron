@@ -1,6 +1,8 @@
 /**
  * renderer.js
- * 
+ * Link between the HTML and main process (index.js in this case)
+ * created : 26/11/2022
+ * lm      : 27/11/2022 Added cpu usage coloring
  */
 
 /**
@@ -10,15 +12,29 @@
 const PROGRESS_BAR_VALUE = document.getElementById("inner-bar");
 const PROGRESS_BAR_VALUE_LABEL = document.getElementById("inner-pct");
 const CPU_SPEED_LABEL = document.getElementById("speed-cpu");
+const DROP_DOWN_MENU = document.getElementById("dropper")
 
+console.log(DROP_DOWN_MENU)
 
+DROP_DOWN_MENU.addEventListener("click", handleDropDown);
+
+function handleDropDown() {
+    DROP_DOWN_MENU.classList.toggle("show")
+    console.log("Pwet")
+}
+
+/**
+ * Get the cpu usage percentage
+ */
 async function getCpuUsage() {
     const usage = await app.cpuUsage("dd");
     const usedOverall = usage.currentLoad;
     updateUI(usedOverall);
-   
 }
 
+/**
+ * Get cpu speed
+ */
 async function getCpuSpeed() {
     const speed = await app.cpuSpeed("ee");
     const ghz = speed.speed;
@@ -28,6 +44,8 @@ async function getCpuSpeed() {
 
 /**
  * Update ui
+ * This method updates the ui and also colorizes the progress bar
+ * based on the usage percentage
  * @param {*} percentage 
  */
 function updateUI(percentage = 0) {
@@ -46,14 +64,16 @@ function updateUI(percentage = 0) {
     } else if (val > 60) {
         barcolor = 'rgba(226, 34, 21, 0.904)';
     }
-    PROGRESS_BAR_VALUE.style.backgroundColor = barcolor;
+    PROGRESS_BAR_VALUE.style.backgroundColor = barcolor;           // added by dvg
     PROGRESS_BAR_VALUE.style.width = `${percentage.toFixed(1)}%`;    
-    PROGRESS_BAR_VALUE_LABEL.innerText = perText;
+    PROGRESS_BAR_VALUE_LABEL.innerText = perText;                  // added by dvg
 }
 
+/**
+ * Helper function 
+ */
 async function getAll() {
-    await getCpuUsage().then(getCpuSpeed());
-    
+    await getCpuUsage().then(await getCpuSpeed());    
 }
 
 setInterval(getAll, 2000);

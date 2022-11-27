@@ -26,8 +26,8 @@ app.whenReady().then(main);
 async function main() {
     window = new BrowserWindow({
         transparent: true,
-        width: 600,
-        height: 500,
+        width: 1024,
+        height: 864,
         icon: path.join(__dirname, 'icon.ico'),
         resizable: true,
         show: false,

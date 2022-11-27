@@ -14,7 +14,7 @@ nav {
     -webkit-app-region: drag;
     user-select: none; /* Avoid selection the titlebar elements */
     width: 100vw;
-    height: 45px;
+    height: 32px;
     color: white;
     display: flex;  /* This makes sure that all elements are on one line in the navbar*/
     justify-content: space-between; /* needed to place the icons on their system locations*/
@@ -24,7 +24,9 @@ nav {
 
 .nav-link {
     -webkit-app-region: no-drag;
-    padding: 8px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
     cursor: grab;
     font-size: 1.3em;
 }
@@ -42,6 +44,7 @@ nav {
 /* Own invention */
 .app-title {    
     color: lightgray;
+    padding-left: 1em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
     font-size: 1.2em;
 }
@@ -68,10 +71,8 @@ nav {
     margin: 10px auto;
     /*border-radius: 20px;*/
     /*background-color: rgb(18, 39, 9);*/
-    background-image: url("pgb.png");
-    
-    border: 1px solid #222;
-    
+    background-image: url("pgb.png");    
+    border: 1px solid #222;    
 }
 
 .test {

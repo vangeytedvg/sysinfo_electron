@@ -15,9 +15,13 @@
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-    background-color: red;
+    background-color: rgb(35, 100, 10);
   }
   
+.selected-menu {
+    background-color: rgb(64, 221, 25);
+}
+
 .dropdown {
     float: left;
     overflow: hidden;

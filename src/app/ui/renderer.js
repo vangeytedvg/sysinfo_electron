@@ -14,15 +14,6 @@ const PROGRESS_BAR_VALUE_LABEL = document.getElementById("inner-pct");
 const CPU_SPEED_LABEL = document.getElementById("speed-cpu");
 const DROP_DOWN_MENU = document.getElementById("dropper")
 
-console.log(DROP_DOWN_MENU)
-
-DROP_DOWN_MENU.addEventListener("click", handleDropDown);
-
-function handleDropDown() {
-    DROP_DOWN_MENU.classList.toggle("show")
-    console.log("Pwet")
-}
-
 /**
  * Get the cpu usage percentage
  */

@@ -19,7 +19,7 @@ nav {
     display: flex;  /* This makes sure that all elements are on one line in the navbar*/
     justify-content: space-between; /* needed to place the icons on their system locations*/
     align-items: center; /* This centers the items in the horizontal and vertical center of the navbar*/
-    background-color: rgb(31, 136, 150);
+    background-color: #222;
 }
 
 .nav-link {

@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+body {
+    background-color: white;
+    /*-webkit-app-region: drag;*/
+}
+
+/* NAVIGATION */
+nav {
+    -webkit-app-region: drag;
+    user-select: none; /* Avoid selection the titlebar elements */
+    width: 100vw;
+    height: 45px;
+    color: white;
+    display: flex;  /* This makes sure that all elements are on one line in the navbar*/
+    justify-content: space-between; /* needed to place the icons on their system locations*/
+    align-items: center; /* This centers the items in the horizontal and vertical center of the navbar*/
+    background-color: rgb(31, 136, 150);
+}
+
+.nav-link {
+    -webkit-app-region: no-drag;
+    padding: 8px;
+    cursor: grab;
+    font-size: 1.3em;
+}
+
+.nav-link:hover {
+    background-color: rgb(148, 136, 136);
+    color:white;
+}
+
+.nav-menu {
+    background-color: gray;
+    padding: 10px;
+}
+
+/* Own invention */
+.app-title {    
+    color: lightgray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+    font-size: 1.2em;
+}
+
+.header {
+    text-align: center;
+    margin-top: 70px;    
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+/* CPU Progressbar styles */
+#used-cpu {
+    text-align: center;
+    font-size: 3.4rem;
+    font-weight: 100;
+    padding: 30px;
+}
+
+/* Progress bars */
+#outer-bar {
+    height: 40px;
+    width: 60vw;
+    margin: 10px auto;
+    /*border-radius: 20px;*/
+    /*background-color: rgb(18, 39, 9);*/
+    background-image: url("pgb.png");
+    
+    border: 1px solid #222;
+    
+}
+
+.test {
+    background-color: rgba(226, 34, 21, 0.904);
+}
+
+#inner-bar {
+    width: 73%;
+    height: 40px;
+    background-color: rgba(38, 231, 38, 0.589);
+    /*border-radius: 20px;        */
+}
+
+/*  Own invention */
+#inner-pct {
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    border-color: rgb(26, 90, 9);    
+}
+
+#speed-cpu {
+    text-align: center;
+    font-size: 3.4rem;
+    font-weight: 100;
+    padding: 30px;   
+}

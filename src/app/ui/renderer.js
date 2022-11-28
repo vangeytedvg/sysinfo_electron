@@ -18,8 +18,8 @@ const DROP_DOWN_MENU = document.getElementById("dropper")
  * Get the cpu usage percentage
  */
 async function getCpuUsage() {
-    const usage = await app.cpuUsage("dd");
-    const usedOverall = usage.currentLoad;
+    const usage = await app.cpuUsage("dd").then();    
+    const usedOverall = usage.currentLoad; 
     updateUI(usedOverall);
 }
 
@@ -56,7 +56,11 @@ function updateUI(percentage = 0) {
         barcolor = 'rgba(226, 34, 21, 0.904)';
     }
     PROGRESS_BAR_VALUE.style.backgroundColor = barcolor;           // added by dvg
-    PROGRESS_BAR_VALUE.style.width = `${percentage.toFixed(1)}%`;    
+    if (percentage > 0) {
+        PROGRESS_BAR_VALUE.style.width = `${percentage.toFixed(1)}%`;    
+    } else {
+        PROGRESS_BAR_VALUE.style.width = `${0}%`;    
+    }
     PROGRESS_BAR_VALUE_LABEL.innerText = perText;                  // added by dvg
 }
 

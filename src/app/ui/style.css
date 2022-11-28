@@ -88,12 +88,12 @@ nav {
     width: 0%;                 /* Must be set to 0% otherwise the bar flicker on startup */
     height: 40px;
     background-color: rgba(38, 231, 38, 0.349);
-    transition: width 0.25s;   /* Makes the progressbar slide smoothly */
+    transition: width 0.25s;   /* Makes the progressbar slide smoothly */    
     
 }
 
-/*  Own invention */
-#inner-pct {
+/* The label inside the progress bar (#inner-bar) */
+#inner-pct {    
     padding-top: 10px;
     text-align: center;
     color: white;

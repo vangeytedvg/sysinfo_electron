@@ -1,5 +1,5 @@
 /**
- * renderer.js
+ * CPUrenderer.js
  * Link between the HTML and main process (index.js in this case)
  * created : 26/11/2022
  * lm      : 27/11/2022 Added cpu usage coloring
@@ -47,13 +47,13 @@ function updateUI(percentage = 0) {
     let val = percentage.toFixed(1)
     //  Adapt the bar color to the percentage
     if (val < 20) {
-        barcolor ='rgba(95, 238, 29,  0.500)';
+        barcolor ='rgba(95, 238, 29, 0.904)';
     } else if (val > 20 && val < 40 )  {    
-        barcolor ='rgba(67, 187, 20,  0.349)';
+        barcolor ='rgba(67, 187, 20, 0.466)';
     } else if (val > 40 && val < 60) {
-        barcolor ='rgba(38, 231, 38,  0.349)';
+        barcolor ='rgba(38, 231, 38, 0.589)';
     } else if (val > 60) {
-        barcolor = 'rgba(226, 34, 21,  0.349)';
+        barcolor = 'rgba(226, 34, 21, 0.904)';
     }
     PROGRESS_BAR_VALUE.style.backgroundColor = barcolor;           // added by dvg
     if (percentage > 0) {

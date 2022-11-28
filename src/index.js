@@ -5,7 +5,7 @@ const path = require('path');
 const { currentLoad, cpu, cpuCurrentSpeed } = require('systeminformation');
 
 let window;
-let maxiwin = false;
+let maxiwin = true;
 
 /* Specific system information 
     const si = require('systeminformation');
@@ -76,3 +76,12 @@ ipcMain.on("app-minimize", () => {
     window.minimize();
 });
 
+ipcMain.on("app-maximize", () => {
+    if (maxiwin) {
+        maxiwin = false;
+        window.maximize();
+    } else if (!maxiwin) {
+        maxiwin = true;
+        window.unmaximize();
+    }
+});

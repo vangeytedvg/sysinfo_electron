@@ -6,9 +6,11 @@
 
 
 const MINIMIZE_WINDOW = document.getElementById("minimize");
+const MAXIMIZE_WINDOW = document.getElementById("maximize");
 const CLOSE_WINDOW = document.getElementById("close-app");
 
 MINIMIZE_WINDOW.addEventListener("click", minimizeWindow);
+MAXIMIZE_WINDOW.addEventListener("click", maximizeWindow);
 CLOSE_WINDOW.addEventListener("click", closeWindow);
 
 /**
@@ -20,4 +22,9 @@ function minimizeWindow() {
 
 function closeWindow() {
     app.window.close_window();
+}
+
+function maximizeWindow() {
+    console.log("PWAAAKAKAK")
+    app.window.maximize_window();
 }

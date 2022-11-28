@@ -15,7 +15,7 @@ const API = {
     window: {
         close_window: () => ipcRenderer.send("app-close"),
         minimize_window: () => ipcRenderer.send("app-minimize"),
-        /*maximize_window: () => ipcRenderer.send("app-maximize"),*/
+        maximize_window: () => ipcRenderer.send("app-maximize"),
     },
     cpuUsage: (data) => ipcRenderer.invoke("cpu-get", "get usage"),
     cpuSpeed: (data) => ipcRenderer.invoke("cpu-speed", "get speed"),

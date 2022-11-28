@@ -37,7 +37,7 @@ async function main() {
             devTools: true,
             sandbox: false,
             nodeIntegration: true,
-            preload: path.join(__dirname, '/backend/preload.js')
+            preload: path.join(__dirname, './backend/preload.js')
         }
     })
 

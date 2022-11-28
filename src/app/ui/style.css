@@ -23,7 +23,7 @@ nav {
     display: flex;  /* This makes sure that all elements are on one line in the navbar*/
     justify-content: space-between; /* needed to place the icons on their system locations*/
     align-items: center; /* This centers the items in the horizontal and vertical center of the navbar*/
-    background-color: #222;
+    background-color: rgb(66, 66, 66);
 }
 
 .nav-link {
@@ -83,11 +83,12 @@ nav {
     background-color: rgba(226, 34, 21, 0.904);
 }
 
+/* the progress bar */
 #inner-bar {
-    width: 73%;
+    width: 0%;                 /* Must be set to 0% otherwise the bar flicker on startup */
     height: 40px;
     background-color: rgba(38, 231, 38, 0.349);
-    transition: width 0.25s;
+    transition: width 0.25s;   /* Makes the progressbar slide smoothly */
     
 }
 
@@ -118,7 +119,3 @@ nav {
     color: rgb(201, 201, 201);
 }
 
-.md50 {
-    margin-top: 20px;
-
-}

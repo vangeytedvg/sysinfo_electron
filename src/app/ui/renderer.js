@@ -20,6 +20,7 @@ const DROP_DOWN_MENU = document.getElementById("dropper")
 async function getCpuUsage() {
     const usage = await app.cpuUsage("dd").then();    
     const usedOverall = usage.currentLoad; 
+    
     updateUI(usedOverall);
 }
 
@@ -39,8 +40,8 @@ async function getCpuSpeed() {
  * based on the usage percentage
  * @param {*} percentage 
  */
-function updateUI(percentage = 0) {
-    const perText = `${percentage.toFixed(1)}%`;
+function updateUI(percentage = 0) {    
+    const perText = `${percentage.toFixed(1)}%`;    
     let barcolor;
     // Get percentage value, put it in the val variable to avoid
     // multiple calls

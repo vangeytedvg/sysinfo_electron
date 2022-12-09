@@ -46,8 +46,48 @@
     </div>
 
     <denka-title caption="CPU Information"></denka-title>
+
+    <section>
+      <div class="header-title">
+        Current CPU details
+    </div>
+
+      <table class="table-style">
+        <tr>
+        <th>Setting</th>
+        <th>Details</th>
+      </tr>  
+        <tr>
+          <td>Manufacturer</td>
+          <td><div class="loading" id="manufacturer">...</div></td>
+        </tr>
+        <tr>
+          <td>Brand</td>
+          <td><div class="loading" id="brand">...</div></td>
+        </tr>
+        <tr>
+          <td>Speed</td>
+          <td><div class="loading" id="speed">...</div></td>
+        </tr>
+        <tr>
+          <td>Minumum Speed</td>
+          <td><div class="loading" id="minspeed">...</div></td>
+        </tr>
+        <tr>
+          <td>Maximum Speed</td>
+          <td><div class="loading" id="maxspeed">...</div></td>
+        </tr>
+        <tr>
+          <td>Cores</td>
+          <td><div class="loading" id="cores">...</div></td>
+        </tr>
+      
+      </table>
+    </section>
+
+
     <!-- Defered Scripts -->
-    <script src="./renderer.js" defer type="module"></script>
+    <script src="./cupurenderer.js" defer type="module"></script>
     <!-- Window events script -->
     <script src="./window.js" defer type="module"></script>
     <!-- DenkaTech Components -->

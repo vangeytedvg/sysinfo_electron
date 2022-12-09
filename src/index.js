@@ -5,7 +5,7 @@ const path = require('path');
 const { currentLoad, cpu, cpuCurrentSpeed } = require('systeminformation');
 
 let window;
-let maxiwin = true;
+let maxiwin = true;  // Tracks the state of the window
 
 /* Specific system information 
     const si = require('systeminformation');
@@ -23,7 +23,7 @@ app.whenReady().then(main);
  * Create the main window, this function also looks in the current
  * directory for the app's icon.
  */
-async function main() {
+async function main() {    
     window = new BrowserWindow({
         transparent: true,
         width: 1024,
@@ -37,6 +37,7 @@ async function main() {
             devTools: true,
             sandbox: false,
             nodeIntegration: true,
+            /* The preload script lets us commincate between the main process and the renderer*/
             preload: path.join(__dirname, './backend/preload.js')
         }
     })
@@ -49,19 +50,28 @@ async function main() {
 
 /* Handle messages from the renderer process */
 
-/** renderer ==> main with return value from main */
-ipcMain.handle("cpu-get", async (_, data) => {
+
+/** CPU RELATED METHODS ********************************************************************/
+ 
+/** 
+ * Get the current load of the cpu
+ */ 
+ipcMain.handle("cpu-get-load", async (_, data) => {
     const usage = await currentLoad();
-    //const speed = await cpuCurrentSpeed();
-    //const celcius = await cpuCurrentSpeed();
     return usage;
 })
 
+/**
+ * Get the total speed of the CPU 
+ */
 ipcMain.handle("cpu-speed", async (_, data) => {
     const speed = await cpuCurrentSpeed();
     return speed;
 })
 
+/**
+ * CPU Generic information
+ */
 ipcMain.handle('cpu-type', async (_, data) => {
     const cpu_info = await cpu();
     return cpu_info;
@@ -72,10 +82,16 @@ ipcMain.on("app-close", () => {
     app.quit();
 });
 
+/**
+ * Minimize window
+ */
 ipcMain.on("app-minimize", () => {
     window.minimize();
 });
 
+/**
+ * Maximize en restore main window 
+ */
 ipcMain.on("app-maximize", () => {
     if (maxiwin) {
         maxiwin = false;

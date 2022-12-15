@@ -24,4 +24,4 @@ const API = {
 /**
  * Expose the API
  */
-contextBridge.exposeInMainWorld("app", API)
+contextBridge.exposeInMainWorld("app", API) 

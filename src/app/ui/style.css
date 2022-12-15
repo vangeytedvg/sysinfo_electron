@@ -124,3 +124,8 @@ nav {
     margin-left: 10%;
 }
 
+.container {
+    align-items: center;
+    background-color: rgb(56, 55, 55);
+}
+

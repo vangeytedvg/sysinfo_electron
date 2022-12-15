@@ -1,20 +1,23 @@
 /* Base class for button styling */
 .button {
     opacity: 0.7;
-    background-color: #4caf50;
+    background-color: #4caf50;    
     border: 1px;
     border-radius: 5px;
     color: white;
     padding: 8px 16px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 1em;
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
 }
 
+/** This style is set for all types of buttons in this css **/
+.button:focus {
+    font-style: italic;
+}
 
 /** Can be used to indicate shortcuts 
 .button::first-letter{
@@ -25,6 +28,11 @@
     background-color: rgb(206, 206, 206);
     color: black;
     border: 1px solid rgb(255, 255, 255);
+}
+
+/* Makes the button shift down 4 pixels */
+.button-white:active {   
+	transform: translateY(4px);
 }
 
 .button-white:hover {
@@ -39,6 +47,10 @@
     border: 1px solid rgb(121, 121, 121);
 }
 
+.button-gray:active {
+	transform: translateY(4px);
+}
+
 .button-gray:hover {
     background-color: rgb(192, 192, 192);
     color: rgb(90, 90, 90);
@@ -51,11 +63,14 @@
     border: 1px solid #367938;
 }
 
+.button-green:active {
+    transform: translateY(4px);
+}
+
 .button-green:hover {
     background-color: #4caf50;
     color: white;
-    border: 1px solid #4caf50;
-    
+    border: 1px solid #4caf50;    
 }
 
 .button-blue {
@@ -68,6 +83,10 @@
     background-color: rgb(100, 97, 255);
     color: white;
     border: 1px solid rgb(100, 97, 255);
+}
+
+.button-blue:active {
+    transform: translateY(4px);
 }
 
 .disabled {

@@ -9,9 +9,13 @@ const MINIMIZE_WINDOW = document.getElementById("minimize");
 const MAXIMIZE_WINDOW = document.getElementById("maximize");
 const CLOSE_WINDOW = document.getElementById("close-app");
 
+const KWAKKEL_BUTTON = document.getElementById("kwakkel");
+
 MINIMIZE_WINDOW.addEventListener("click", minimizeWindow);
 MAXIMIZE_WINDOW.addEventListener("click", maximizeWindow);
 CLOSE_WINDOW.addEventListener("click", closeWindow);
+
+KWAKKEL_BUTTON.addEventListener("click", kwakkelWindow)
 
 /**
  * Implementation of the event handlers
@@ -27,4 +31,10 @@ function closeWindow() {
 function maximizeWindow() {
     console.log("PWAAAKAKAK")
     app.window.maximize_window();
+}
+
+function kwakkelWindow() {
+    alert("KWAAKL");
+    const info = document.getElementById("infobar");
+    info.innerText = "YOUPLA"
 }

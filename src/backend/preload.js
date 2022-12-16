@@ -20,10 +20,11 @@ const API = {
     /* Calls to index.js */
     cpuUsage: (data) => ipcRenderer.invoke("cpu-get-load", "get usage"),
     cpuSpeed: (data) => ipcRenderer.invoke("cpu-speed", "get speed"),
+    /* --> Calls index.js */
     cpuManufacturer: (data) => ipcRenderer.invoke("cpu-type", "get manufacturer"),
 }
 
 /**
  * Expose the API
  */
-contextBridge.exposeInMainWorld("app", API) 
+contextBridge.exposeInMainWorld("app", API)  

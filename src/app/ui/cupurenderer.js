@@ -39,6 +39,7 @@ async function getCpuManuFacturer() {
     console.log("Fetching Data")
     
     /* Get the information */
+    /* app.cpuManufacturer calls preload.js */
     const manu = await app.cpuManufacturer()
     console.log(manu);
     CPU_MANUFACTURER.innerText = `${manu.manufacturer}`

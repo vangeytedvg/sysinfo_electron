@@ -19,6 +19,7 @@ const API = {
     },
     cpuUsage: (data) => ipcRenderer.invoke("cpu-get-load", "get usage"),
     cpuSpeed: (data) => ipcRenderer.invoke("cpu-speed", "get speed"),
+    cpuManufacturer: (data) => ipcRenderer.invoke("cpu-type", "get manufacturer"),
 }
 
 /**

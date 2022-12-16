@@ -30,7 +30,6 @@
     <!-- APP MENU -->
     <div class="navbar">
       <a href="index.html">System Information</a>
-
       <a href="cpu.html">CPU</a>
       <a href="memory.html" class="selected-menu">Memory</a>
       <a href="graphics.html">Graphics</a>
@@ -44,11 +43,10 @@
     </div>
 
     <!-- Data -->
+    <denka-title caption="Memory Information"></denka-title>
+    
     <section>
-      <denka-title caption="Memory Information"></denka-title>
-    </section>
-
-    <div class="container">
+    <div class="flex-container">
       <button id="kwakkel" class="button button-white">White</button>
       <button class="button button-gray">Grey</button>
       <button class="button button-green">Green</button>
@@ -57,11 +55,14 @@
       <button class="button button-green">Green</button>
       <button class="button button-blue">Blue</button>
       <button class="button disabled">Oink</button>
+      <!-- EXPERIMENT FOR IPC : -->
+    
+
     </div>
-
-    <!-- EXPERIMENT FOR IPC : -->
     <div id = "infobar"></div>
+  </section>
 
+    
     <!-- Window events script -->
     <script src="./window.js" defer type="module"></script>
     <!-- DenkaTech Components -->

@@ -1,95 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
-    <title>System Information App</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./menu.css" />
-  </head>
-  <body>
-    <!-- ****** Make the window titlebar and buttons  ****** -->
-    <nav>
-      <div class="left-nav">
-        <!--<span class="nav-link">&#x2630;</span>-->
-        <div class="app-title">DenkaTech System Info -(CPU)-</div>
-      </div>
-      
-      <div class="right-nav">
-        <span class="nav-link" id="minimize">🗕</span>
-        <span class="nav-link" id="maximize">🗖</span>
-        <span class="nav-link" id="close-app">⊗</span>
-      </div>
-    </nav>
-    </nav>
-    <!-- ****** End titlebar  ****** -->
 
-    <!-- APP MENU -->
-    <div class="navbar">
-      <a href="index.html">System Information</a>
-        
-          <a href="cpu.html" class="selected-menu">CPU</a>
-          <a href="memory.html">Memory</a>
-          <a href="graphics.html">Graphics</a>
-          <a href="os.html">OS</a>
-          <a href="disks.html">Disks</a>
-          <a href="printer.html">Printer</a>
-          <a href="wifi.html">WIFI</a>
-          <a href="usb.html">USB</a>
-          <a href="audio.html">Audio</a>
-          <a href="bluetooth.html">Bluetooth</a>
-        
-      
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
+  <title>System Information App</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./menu.css" />
+</head>
+
+<body>
+  <!-- ****** Make the window titlebar and buttons  ****** -->
+  <nav>
+    <div class="left-nav">
+      <!--<span class="nav-link">&#x2630;</span>-->
+      <div class="app-title">DenkaTech System Info -(CPU)-</div>
     </div>
 
-    <denka-title caption="CPU Information"></denka-title>
-
-    <section>
-      <div class="header-title">
-        Current CPU details
+    <div class="right-nav">
+      <span class="nav-link" id="minimize">🗕</span>
+      <span class="nav-link" id="maximize">🗖</span>
+      <span class="nav-link" id="close-app">⊗</span>
     </div>
+  </nav>
+  </nav>
+  <!-- ****** End titlebar  ****** -->
 
-      <table class="table-style">
+  <!-- APP MENU -->
+  <div class="navbar">
+    <a href="index.html">System Information</a>
+    <a href="cpu.html" class="selected-menu">CPU</a>
+    <a href="memory.html">Memory</a>
+    <a href="graphics.html">Graphics</a>
+    <a href="os.html">OS</a>
+    <a href="disks.html">Disks</a>
+    <a href="printer.html">Printer</a>
+    <a href="wifi.html">WIFI</a>
+    <a href="usb.html">USB</a>
+    <a href="audio.html">Audio</a>
+    <a href="bluetooth.html">Bluetooth</a>
+  </div>
+
+  <denka-title caption="CPU Information"></denka-title>
+
+
+  <div class="header-title">
+    Current CPU details
+  </div>
+
+  <div class="flex-container">
+    <div class="card">
+      <table id="cpu-table">
         <tr>
-        <th>Setting</th>
-        <th>Details</th>
-      </tr>  
+          <th>Setting</th>
+          <th>Details</th>
+        </tr>
         <tr>
           <td>Manufacturer</td>
-          <td><div class="loading" id="manufacturer">...</div></td>
+          <td>
+            <div id="manufacturer">...</div>
+          </td>
         </tr>
         <tr>
           <td>Brand</td>
-          <td><div class="loading" id="brand">...</div></td>
+          <td>
+            <div id="brand">...</div>
+          </td>
         </tr>
         <tr>
           <td>Speed</td>
-          <td><div class="loading" id="speed">...</div></td>
+          <td>
+            <div id="speed">...</div>
+          </td>
         </tr>
         <tr>
           <td>Minumum Speed</td>
-          <td><div class="loading" id="minspeed">...</div></td>
+          <td>
+            <div id="minspeed">...</div>
+          </td>
         </tr>
         <tr>
           <td>Maximum Speed</td>
-          <td><div class="loading" id="maxspeed">...</div></td>
+          <td>
+            <div id="maxspeed">...</div>
+          </td>
         </tr>
         <tr>
           <td>Cores</td>
-          <td><div class="loading" id="cores">...</div></td>
+          <td>
+            <div id="cores">...</div>
+          </td>
         </tr>
-      
       </table>
-    </section>
+    </div>
+    <!----- Second part of details  -->
+    <div class="card">
+      <table id="cpu-table">
+        <tr>
+          <th>Setting</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td>Processors</td>
+          <td>
+            <div id="processors">...</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Stepping</td>
+          <td>
+            <div id="stepping">...</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Virtualization</td>
+          <td>
+            <div id="virtualization">...</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Voltage</td>
+          <td>
+            <div id="voltage">...</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Performance Cores</td>
+          <td>
+            <div id="performancecores">...</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Model</td>
+          <td>
+            <div id="model">...</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
 
 
-    <!-- Defered Scripts -->
-    <script src="./cupurenderer.js" defer type="module"></script>
-    <!-- Window events script -->
-    <script src="./window.js" defer type="module"></script>
-    <!-- DenkaTech Components -->
-    <script src="./components/Denkacomponents.js"></script>
-  </body>
+  <!-- Defered Scripts -->
+  <script src="./cupurenderer.js" defer type="module"></script>
+  <!-- Window events script -->
+  <script src="./window.js" defer type="module"></script>
+  <!-- DenkaTech Components -->
+  <script src="./components/Denkacomponents.js"></script>
+</body>
+
 </html>

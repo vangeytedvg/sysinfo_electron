@@ -15,7 +15,7 @@ MINIMIZE_WINDOW.addEventListener("click", minimizeWindow);
 MAXIMIZE_WINDOW.addEventListener("click", maximizeWindow);
 CLOSE_WINDOW.addEventListener("click", closeWindow);
 
-KWAKKEL_BUTTON.addEventListener("click", kwakkelWindow)
+//KWAKKEL_BUTTON.addEventListener("click", kwakkelWindow)
 
 /**
  * Implementation of the event handlers
@@ -33,8 +33,5 @@ function maximizeWindow() {
     app.window.maximize_window();
 }
 
-function kwakkelWindow() {
-    alert("KWAAKL");
-    const info = document.getElementById("infobar");
-    info.innerText = "YOUPLA"
-}
+
+

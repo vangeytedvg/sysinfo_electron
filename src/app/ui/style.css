@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    box-sizing: border-box;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 body {
@@ -16,13 +17,17 @@ body {
 /* NAVIGATION */
 nav {
     -webkit-app-region: drag;
-    user-select: none; /* Avoid selection the titlebar elements */
+    user-select: none;
+    /* Avoid selection the titlebar elements */
     width: 100vw;
     height: 32px;
     color: white;
-    display: flex;  /* This makes sure that all elements are on one line in the navbar*/
-    justify-content: space-between; /* needed to place the icons on their system locations*/
-    align-items: center; /* This centers the items in the horizontal and vertical center of the navbar*/
+    display: flex;
+    /* This makes sure that all elements are on one line in the navbar*/
+    justify-content: space-between;
+    /* needed to place the icons on their system locations*/
+    align-items: center;
+    /* This centers the items in the horizontal and vertical center of the navbar*/
     background-color: rgb(66, 66, 66);
 }
 
@@ -37,7 +42,7 @@ nav {
 
 .nav-link:hover {
     background-color: rgb(148, 136, 136);
-    color:white;
+    color: white;
 }
 
 .nav-menu {
@@ -46,16 +51,17 @@ nav {
 }
 
 /* Own invention */
-.app-title {    
+.app-title {
     color: lightgray;
     padding-left: 1em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
     font-size: 1.2em;
 }
 
 .header {
     text-align: center;
-    margin-top: 70px;    
+    margin-top: 70px;
     font-weight: 500;
     font-size: 2.5rem;
 }
@@ -75,7 +81,7 @@ nav {
     margin: 10px auto;
     /*border-radius: 20px;*/
     /*background-color: rgb(18, 39, 9);*/
-    background-image: url("pgb.png");    
+    background-image: url("pgb.png");
     border: 1px solid #222;
 }
 
@@ -85,31 +91,32 @@ nav {
 
 /* the progress bar */
 #inner-bar {
-    width: 0%;                 /* Must be set to 0% otherwise the bar flicker on startup */
+    width: 0%;
+    /* Must be set to 0% otherwise the bar flicker on startup */
     height: 40px;
     background-color: rgba(38, 231, 38, 0.349);
-    transition: width 0.25s;   /* Makes the progressbar slide smoothly */    
-    
+    transition: width 0.25s;
+    /* Makes the progressbar slide smoothly */
 }
 
 /* The label inside the progress bar (#inner-bar) */
-#inner-pct {    
+#inner-pct {
     padding-top: 10px;
     text-align: center;
     color: white;
-    border-color: rgb(26, 90, 9);    
+    border-color: rgb(26, 90, 9);
 }
 
 #speed-cpu {
     text-align: center;
     font-size: 3.4rem;
     font-weight: 100;
-    padding: 30px;   
+    padding: 30px;
 }
 
 /* Other markup */
 .header-title {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
     /*text-shadow: 1px 1px 2px rgb(165, 165, 165);*/
     /*text-shadow: rgb(87, 126, 236) 1px 0 20px;*/
@@ -119,13 +126,68 @@ nav {
     color: rgb(0, 168, 219);
 }
 
+/************** EXPERIMENTS ZONE ***/
+
 /** Table formatting **/
 .table-style {
     margin-left: 10%;
 }
 
-.container {
-    align-items: center;
-    background-color: rgb(56, 55, 55);
+#cpu-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 300px;
+    margin-left: 35px;
+    text-align: left;
 }
 
+#cpu-table td,
+#cpu-table th {
+    border: 1px;
+    padding: 8px;
+}
+
+#cpu-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+#cpu-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#cpu-table tr:nth-child(odd) {
+    background-color: #9b9b9b;
+}
+
+#cpu-table tr:hover {
+    background-color: rgb(109, 108, 108);
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 50px;
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+
+.flex-container {
+    display: flex;
+    /* This centers the buttons on the screen */
+    justify-content: center;
+    /* If there are too many buttons wrap around */
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.flex-container>button {
+    text-align: center;
+    line-height: 20px;
+    font-size: 1em;
+}

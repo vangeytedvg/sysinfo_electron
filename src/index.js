@@ -73,7 +73,7 @@ ipcMain.handle("cpu-speed", async (_, data) => {
  * CPU Generic information
  */
 ipcMain.handle('cpu-type', async (_, data) => {
-    const cpu_info = await cpu();
+    const cpu_info = await cpu();    
     return cpu_info;
 })
 

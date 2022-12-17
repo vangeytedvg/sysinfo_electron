@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
-    <title>System Information App</title>
 
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./menu.css" />
-    <link rel="stylesheet" href="../ui/styles/denkatech.css" />
-  </head>
-  <body>
-    <!-- ****** Make the window titlebar and buttons  ****** -->
-    <nav>
-      <div class="left-nav">
-        <!--<span class="nav-link">&#x2630;</span>-->
-        <div class="app-title">DenkaTech System Info -(MEMORY)-</div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
+  <title>System Information App</title>
 
-      <div class="right-nav">
-        <span class="nav-link" id="minimize">🗕</span>
-        <span class="nav-link" id="maximize">🗖</span>
-        <span class="nav-link" id="close-app">⊗</span>
-      </div>
-    </nav>
-    <!-- ****** End titlebar  ****** -->
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="../ui/styles/menu.css" />
+  <link rel="stylesheet" href="../ui/styles/denkatech.css" />
 
-    <!-- APP MENU -->
-    <div class="navbar">
+</head>
+
+<body>
+  <!-- ****** Make the window titlebar and buttons  ****** -->
+  <nav>
+    <div class="left-nav">
+      <!--<span class="nav-link">&#x2630;</span>-->
+      <div class="app-title">DenkaTech System Info -(MEMORY)-</div>
+    </div>
+
+    <div class="right-nav">
+      <span class="nav-link" id="minimize">🗕</span>
+      <span class="nav-link" id="maximize">🗖</span>
+      <span class="nav-link" id="close-app">⊗</span>
+    </div>
+  </nav>
+  <!-- ****** End titlebar  ****** -->
+
+  <!-- APP MENU -->
+  <div class="wrapper">
+    <!-- Top menu & menu button -->
+    <div class="sidebar">
+      <div class="wah2">Sysinfo Menu</div>          
       <a href="index.html">System Information</a>
       <a href="cpu.html">CPU</a>
       <a href="memory.html" class="selected-menu">Memory</a>
@@ -41,31 +47,37 @@
       <a href="audio.html">Audio</a>
       <a href="bluetooth.html">Bluetooth</a>
     </div>
+  </div>
 
-    <!-- Data -->
-    <denka-title caption="Memory Information"></denka-title>
-    
-    <section>
+  <!-- Data -->
+  <denka-title caption="Memory Information"></denka-title>
+
+  <section>
     <div class="flex-container">
-      <button id="kwakkel" class="button button-white">White</button>
+      <button class="button button-white">White</button>
       <button class="button button-gray">Grey</button>
-      <button class="button button-green">Green</button>
-      <button class="button button-blue">Blue</button>  
+      <button id="greenButton" class="button button-green">Green</button>
+      <button class="button button-blue">Blue</button>
       <button class="button button-gray">Grey</button>
       <button class="button button-green">Green</button>
       <button class="button button-blue">Blue</button>
       <button class="button disabled">Oink</button>
       <!-- EXPERIMENT FOR IPC : -->
-    
+
 
     </div>
-    <div id = "infobar"></div>
+    <div id="infobar"></div>
+
+    <!-- <div id="spinner" class="spin"></div>                 -->
+
   </section>
 
-    
-    <!-- Window events script -->
-    <script src="./window.js" defer type="module"></script>
-    <!-- DenkaTech Components -->
-    <script src="./components/Denkacomponents.js"></script>
-  </body>
+
+  <!-- Window events script -->
+  <script src="./window.js" defer type="module"></script>
+  <script src="./memory.js" defer type="module"></script>
+  <!-- DenkaTech Components -->
+  <script src="./components/Denkacomponents.js"></script>
+</body>
+
 </html>

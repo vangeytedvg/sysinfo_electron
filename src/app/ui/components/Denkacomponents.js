@@ -1,5 +1,5 @@
 /**
- * denkatitle.js
+ * Denkacomponents.js
  * The DenkaTech components library
  */
 class DenkaTitle extends HTMLElement {

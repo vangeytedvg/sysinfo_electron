@@ -11,7 +11,7 @@ body {
     background-color: rgba(14, 179, 165, 0.541);
     */
     /*-webkit-app-region: drag;*/
-    background-color: rgb(85, 85, 83);
+    background-color: rgb(53, 53, 53);
 }
 
 /* NAVIGATION */
@@ -139,6 +139,7 @@ nav {
     width: 300px;
     margin-left: 35px;
     text-align: left;
+    margin-bottom: 20px;
 }
 
 #cpu-table td,
@@ -175,8 +176,7 @@ nav {
     text-align: center;
     background-color: #f1f1f1;
 }
-
-
+  
 .flex-container {
     display: flex;
     /* This centers the buttons on the screen */

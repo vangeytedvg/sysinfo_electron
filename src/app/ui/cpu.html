@@ -8,7 +8,8 @@
   <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
   <title>System Information App</title>
   <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./menu.css" />
+  <link rel="stylesheet" href="../ui/styles/menu.css" />
+  <link rel="stylesheet" href="../ui/styles/denkatech.css" />
 </head>
 
 <body>
@@ -43,15 +44,12 @@
     <a href="bluetooth.html">Bluetooth</a>
   </div>
 
-  <denka-title caption="CPU Information"></denka-title>
+  <denka-title caption="CPU Information" /></denka-title>
 
-
-  <div class="header-title">
-    Current CPU details
-  </div>
 
   <div class="flex-container">
     <div class="card">
+      <h1>Generic information</h1>
       <table id="cpu-table">
         <tr>
           <th>Setting</th>
@@ -60,43 +58,44 @@
         <tr>
           <td>Manufacturer</td>
           <td>
-            <div id="manufacturer">...</div>
+            <div id="manufacturer" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Brand</td>
           <td>
-            <div id="brand">...</div>
+            <div id="brand" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Speed</td>
           <td>
-            <div id="speed">...</div>
+            <div id="speed" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Minumum Speed</td>
           <td>
-            <div id="minspeed">...</div>
+            <div id="minspeed" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Maximum Speed</td>
           <td>
-            <div id="maxspeed">...</div>
+            <div id="maxspeed" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Cores</td>
           <td>
-            <div id="cores">...</div>
+            <div id="cores" class="spin"></div>
           </td>
         </tr>
       </table>
     </div>
     <!----- Second part of details  -->
     <div class="card">
+      <h1>Other information</h1>
       <table id="cpu-table">
         <tr>
           <th>Setting</th>
@@ -105,37 +104,37 @@
         <tr>
           <td>Processors</td>
           <td>
-            <div id="processors">...</div>
+            <div id="processors" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Stepping</td>
           <td>
-            <div id="stepping">...</div>
+            <div id="stepping" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Virtualization</td>
           <td>
-            <div id="virtualization">...</div>
+            <div id="virtualization" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Voltage</td>
           <td>
-            <div id="voltage">...</div>
+            <div id="voltage" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Performance Cores</td>
           <td>
-            <div id="performancecores">...</div>
+            <div id="performancecores" class="spin"></div>
           </td>
         </tr>
         <tr>
           <td>Model</td>
           <td>
-            <div id="model">...</div>
+            <div id="model" class="spin"></div>
           </td>
         </tr>
       </table>
@@ -144,9 +143,9 @@
 
 
   <!-- Defered Scripts -->
-  <script src="./cupurenderer.js" defer type="module"></script>
+  <script src="../../ipc/cupurenderer.js" defer type="module"></script>
   <!-- Window events script -->
-  <script src="./window.js" defer type="module"></script>
+  <script src="../../ipc/window.js" defer type="module"></script>
   <!-- DenkaTech Components -->
   <script src="./components/Denkacomponents.js"></script>
 </body>

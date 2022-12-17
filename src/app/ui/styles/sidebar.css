@@ -1,3 +1,9 @@
+/***
+* sidebar.css
+* Styling for the sidebar menu
+* Source and inspiration : https://youtu.be/Fx_NpAPM-iU
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +12,7 @@
 }
 
 .side-nav {
-    width: 200px;
+    width: 250px;
     height: 100vh;
     background: #0d74f5;
     position: fixed;
@@ -17,7 +23,7 @@
 
 .logo {
     display: block;
-    margin-bottom: 130px;
+    margin-bottom: 50px;
 }
 
 .logo-img {
@@ -28,4 +34,22 @@
 .nav-links {
     list-style: none;
     position: relative;
+}
+
+.nav-links li {
+    padding: 12px 0;
+}
+
+/* The anchor tags in the li */
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 1px 1px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li a i {
+    font-size: 22px;
+    margin-right: 20px;
 }

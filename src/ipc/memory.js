@@ -14,4 +14,3 @@
 // function changeSpinner() {
 //     SPINNER.classList.toggle("spin")
 // }
-

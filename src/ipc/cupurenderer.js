@@ -23,10 +23,15 @@ const CPU_MODEL = document.getElementById("model")
 const CPU_CACHE = document.getElementById("cache")
 const CPY_FAMILY = document.getElementById("family")
 
+const PRINTPAGE_TOPRINTER = document.getElementById("printprinter")
 const PRINTPAGE_TOPDF = document.getElementById("pdfprint")
 
-PRINTPAGE_TOPDF.addEventListener('click', (event) => {
+PRINTPAGE_TOPRINTER.addEventListener('click', (event) => {
     const result = app.printCurrentDocument("dd")    
+})
+
+PRINTPAGE_TOPDF.addEventListener('click', (event) => {
+    const result = app.printCurrentDocumentToPDF("dd")    
 })
 
 

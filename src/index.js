@@ -52,6 +52,8 @@ async function main() {
 
 /* Handle messages from the renderer process */
 
+
+/***************************** PRINTING SUPPORT */
 var options = {
      silent: false,
      printBackground: false,
@@ -67,21 +69,31 @@ var options = {
      footer: "Copyright (2022-2023)"
 }
 
-ipcMain.handle("print-page", async(_,data) => {
+/**
+ * Normal print
+ */
+ipcMain.handle("print-page", async(_,data) => {    
     let win = BrowserWindow.getFocusedWindow();
-    console.log("DDDDDDD")
     win.webContents.print(options, (success, failureReason) => {
         if (!success) console.log(failureReason);
         console.log("Done")
     })
 })
-// current.addEventListener('click', (event) => {
-//     let win = BrowserWindow.getFocusedWindow();
-//     win.webContents.printToPDF(options, (success, failureReason) => {
-//         if (!success) console.log(failureReason);
-//     })
-// })
-/** CPU RELATED METHODS ********************************************************************/
+
+/**
+ * PDF print
+ */
+ipcMain.handle("print-page-pdf", async(event,data) => {
+    let win = BrowserWindow.getFocusedWindow();    
+    win.webContents.print(options, (success, failureReason) => {
+        if (!success) console.log(failureReason);
+        console.log("Done")
+        return "clear"
+    })
+})
+
+
+/***************************** SYSINFO SUPPORT */
  
 /** 
  * Get the current load of the cpu
@@ -107,6 +119,7 @@ ipcMain.handle('cpu-type', async (_, data) => {
     return cpu_info;
 })
 
+/***************************** WINDOW SUPPORT */
 /** Window events (renderer process ==> main process), no return value from main*/
 ipcMain.on("app-close", () => {
     app.quit();

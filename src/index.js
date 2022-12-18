@@ -91,7 +91,7 @@ ipcMain.handle("cpu-get-load", async (_, data) => {
     return usage;
 })
 
-/**
+/** 
  * Get the total speed of the CPU 
  */
 ipcMain.handle("cpu-speed", async (_, data) => {

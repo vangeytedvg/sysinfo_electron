@@ -28,6 +28,7 @@ async function main() {
         transparent: true,
         width: 1024,
         height: 864,
+        minWidth: 500,
         icon: path.join(__dirname, 'icon.ico'),
         resizable: true,
         show: false,

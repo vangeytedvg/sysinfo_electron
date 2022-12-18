@@ -36,16 +36,18 @@
     <!-- ****** End titlebar  ****** -->
 
     <!-- APP MENU -->
+    <div>
     <div class="side-nav">
       <!-- Top menu & menu button -->
       <div class="sidebar">
         <a href="#" class="logo">
           <img src="../ui/assets/info-icon.png" alt="logo" class="logo-img" />
+          <img src="../ui/assets/info-icon-small.png" alt="logo" class="logo-icon" />
         </a>
         <ul class="nav-links">
           <li><a href="index.html"><i class='fas fa-home' style='font-size:24px'></i><p>System Information</p></a></li>
           <li><a href="cpu.html"><i class="fas fa-microchip"></i><p>CPU</p></a></li>
-          <li><a href="memory.html"><i class="fas fa-memory"></i><p>Memory</p></a></li>
+          <li class="selected-bar-item"><a href="memory.html"><i class="fas fa-memory"></i><p>Memory</p></a></li>
           <li><a href="graphics.html"><i class="fa-regular fa-image"></i></i><p>Graphics</p></a></li>
           <li><a href="os.html"><i class="fab fa-windows"></i><p>OS</p></a></li>
           <li><a href="disks.html"><i class="fas fa-save"></i><p>Disks</p></a></li>
@@ -58,12 +60,8 @@
         </ul>
       </div>
     </div>
-
-    <!-- Data -->
-    <denka-title caption="Memory Information"></denka-title>
-
-    <section>
-      <div class="flex-container">
+    <div class="body-content-nav">      
+      <denka-title caption="Memory Information"></denka-title>      
         <button class="button button-white">White</button>
         <button class="button button-gray">Grey</button>
         <button id="greenButton" class="button button-green">Green</button>
@@ -72,12 +70,9 @@
         <button class="button button-green">Green</button>
         <button class="button button-blue">Blue</button>
         <button class="button disabled">Oink</button>
-        <!-- EXPERIMENT FOR IPC : -->
-      </div>
-      <div id="infobar"></div>
-
-      <!-- <div id="spinner" class="spin"></div>                 -->
-    </section>
+    </div>
+    
+    
 
     <!-- Window events script -->
     <script src="../../ipc/window.js" defer type="module"></script>

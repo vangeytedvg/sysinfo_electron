@@ -19,6 +19,8 @@
     top:32px;
     left: 0;
     padding: 20px 30px;
+    transition: 0.5s;
+    box-shadow: 5px 5px 10px rgba(46, 161, 255, 0.363);
 }
 
 .logo {
@@ -64,6 +66,30 @@
     margin-right: 20px;
 }
 
+.selected-bar-item a {
+    background-color: rgb(249, 253, 255);    
+    width: 100%;    
+    top: 20px;
+    z-index: -2%;
+    border-radius: 15px;    
+}
+
+.selected-bar-item i {
+    color: black;
+    width: 100%;
+    padding: 0 0 0 0;    
+    margin-right: 10px;
+    padding-right: 20px;
+}
+
+.selected-bar-item p {
+    color: black;
+    padding: 0 0 0 0;    
+    margin-right: 10px;
+    padding-right: 20px;
+}
+
+
 /* The active menu item selection indicator */
 .active {
     background: #fff;
@@ -76,6 +102,7 @@
     border-radius: 6px;
     box-shadow: 0 5px 10px rgba(255,255,255,0.4);
     display: none;
+    transition: top 0.2s;    /* Make the selection box 'slide'*/
 }
 
 /* 
@@ -117,4 +144,48 @@
 
 .nav-links li:nth-child(8):hover ~ .active {
     top: 63%;
+}
+
+.nav-links li:nth-child(9):hover ~ .active {
+    top: 72%;
+}
+
+.nav-links li:nth-child(10):hover ~ .active {
+    top: 81%;
+}
+
+.nav-links li:nth-child(11):hover ~ .active {
+    top: 90%;
+}
+
+.logo-icon {
+    display: none;
+    width: 45px;
+}
+/* Make the sidebar reactive */
+@media only screen and (max-width:600px) {
+    .side-nav{
+        width: 90px;
+    }   
+    .logo-icon {
+        display: block;
+    }
+    .logo-img {
+        display: none;
+    }
+    /* Hide the text from the menu items */
+    .nav-links li a p {
+        display: none;
+    }
+    .nav-links li a i {
+        margin-right: 0;
+    }
+    .nav-links li a {
+        justify-content: center;
+    }
+}
+
+.body-content-nav {
+    margin-left: 300px;
+    font-size: 18px;
 }

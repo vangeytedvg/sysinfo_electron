@@ -11,7 +11,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.side-nav {
+.side-nav {    
     width: 250px;
     height: 100vh;
     background: #0d74f5;
@@ -22,11 +22,12 @@
 }
 
 .logo {
-    display: block;
+    display: flex;        
+    justify-content: center;  /* Had to change this to center the logo image*/
     margin-bottom: 50px;
 }
 
-.logo-img {
+.logo-img {    
     width: 100px;
     height: 100px;
 }
@@ -38,6 +39,15 @@
 
 .nav-links li {
     padding: 12px 0;
+}
+
+/* 
+    Change the color of the text to the actual background color
+    this way, it appears blue on a white background in the active box
+*/
+.nav-links li:hover a{
+    color: #0d74f5;
+    transition: 0.3s;
 }
 
 /* The anchor tags in the li */
@@ -52,4 +62,59 @@
 .nav-links li a i {
     font-size: 22px;
     margin-right: 20px;
+}
+
+/* The active menu item selection indicator */
+.active {
+    background: #fff;
+    width: 100%;
+    height: 47px;
+    position: absolute;
+    left: 0;
+    top: 0%;
+    z-index: -1;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(255,255,255,0.4);
+    display: none;
+}
+
+/* 
+    Highlighting of the selected items.
+    Need to check what the ~ symbol is used for!
+*/
+
+.nav-links li:hover ~ .active {
+    display: block;
+}
+
+.nav-links li:nth-child(1):hover ~ .active {
+    top: 0;
+}
+
+.nav-links li:nth-child(2):hover ~ .active {
+    top: 9%;
+}
+
+.nav-links li:nth-child(3):hover ~ .active {
+    top: 18%;
+}
+
+.nav-links li:nth-child(4):hover ~ .active {
+    top: 27%;
+}
+
+.nav-links li:nth-child(5):hover ~ .active {
+    top: 36%;
+}
+
+.nav-links li:nth-child(6):hover ~ .active {
+    top: 45%;
+}
+
+.nav-links li:nth-child(7):hover ~ .active {
+    top: 54%;
+}
+
+.nav-links li:nth-child(8):hover ~ .active {
+    top: 63%;
 }

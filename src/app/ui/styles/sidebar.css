@@ -14,13 +14,13 @@
 .side-nav {    
     width: 250px;
     height: 100vh;
-    background: #0d74f5;
+    background: rgb(36, 36, 36);
     position: fixed;
     top:32px;
     left: 0;
     padding: 20px 30px;
     transition: 0.5s;
-    box-shadow: 5px 5px 10px rgba(46, 161, 255, 0.363);
+    box-shadow: 5px 5px 10px rgba(83, 83, 83, 0.363);
 }
 
 .logo {
@@ -48,13 +48,13 @@
     this way, it appears blue on a white background in the active box
 */
 .nav-links li:hover a{
-    color: #0d74f5;
+    color: rgba(255, 255, 255, 0.473);
     transition: 0.3s;
 }
 
 /* The anchor tags in the li */
 .nav-links li a {
-    color: white;
+    color: rgb(36, 156, 106);
     text-decoration: none;
     padding: 1px 1px;
     display: flex;
@@ -67,32 +67,27 @@
 }
 
 .selected-bar-item a {
-    background-color: rgb(249, 253, 255);    
+    /* background-color: rgb(249, 253, 255);    
     width: 100%;    
     top: 20px;
     z-index: -2%;
-    border-radius: 15px;    
+    border-radius: 15px;     */
 }
 
 .selected-bar-item i {
-    color: black;
-    width: 100%;
-    padding: 0 0 0 0;    
-    margin-right: 10px;
-    padding-right: 20px;
+    color: black;     
+    color: rgb(80, 245, 176);   
 }
 
 .selected-bar-item p {
-    color: black;
-    padding: 0 0 0 0;    
-    margin-right: 10px;
-    padding-right: 20px;
+    color: rgb(80, 245, 176);
+    font-weight: 900;
 }
 
 
 /* The active menu item selection indicator */
 .active {
-    background: #fff;
+    background: rgb(36, 156, 106);
     width: 100%;
     height: 47px;
     position: absolute;
@@ -100,7 +95,7 @@
     top: 0%;
     z-index: -1;
     border-radius: 6px;
-    box-shadow: 0 5px 10px rgba(255,255,255,0.4);
+    box-shadow: 0 5px 10px rgba(92, 92, 92, 0.4);
     display: none;
     transition: top 0.2s;    /* Make the selection box 'slide'*/
 }
@@ -162,6 +157,7 @@
     display: none;
     width: 45px;
 }
+
 /* Make the sidebar reactive */
 @media only screen and (max-width:600px) {
     .side-nav{

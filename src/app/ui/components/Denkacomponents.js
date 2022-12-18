@@ -8,10 +8,10 @@ class DenkaTitle extends HTMLElement {
         :host {            
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 700;
-            text-shadow: rgb(87, 126, 236) 1px 0 20px;
+            
             font-size: 2.5em;
             text-align: center;
-            color: rgb(201, 201, 201);
+            color: rgb(14, 129, 81);
             margin: 50px;
         }
 

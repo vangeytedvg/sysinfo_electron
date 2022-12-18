@@ -1,3 +1,4 @@
+const { fail } = require('assert');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { cp } = require('fs');
 const os = require('os');
@@ -51,7 +52,35 @@ async function main() {
 
 /* Handle messages from the renderer process */
 
+var options = {
+     silent: false,
+     printBackground: false,
+     color: true,
+     margin: {
+         marginType: 'printableArea'
+     },
+     landscape: false,
+     pagesPerSheet: 1,
+     collate: false,
+     copies: 1,
+     header: "DenkaTech System Information",
+     footer: "Copyright (2022-2023)"
+}
 
+ipcMain.handle("print-page", async(_,data) => {
+    let win = BrowserWindow.getFocusedWindow();
+    console.log("DDDDDDD")
+    win.webContents.print(options, (success, failureReason) => {
+        if (!success) console.log(failureReason);
+        console.log("Done")
+    })
+})
+// current.addEventListener('click', (event) => {
+//     let win = BrowserWindow.getFocusedWindow();
+//     win.webContents.printToPDF(options, (success, failureReason) => {
+//         if (!success) console.log(failureReason);
+//     })
+// })
 /** CPU RELATED METHODS ********************************************************************/
  
 /** 

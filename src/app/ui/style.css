@@ -31,6 +31,10 @@ nav {
     background-color: rgb(66, 66, 66);
 }
 
+.nav-fix {
+    position: fixed;
+    top: 0;
+}
 .nav-link {
     -webkit-app-region: no-drag;
     padding-bottom: 1px;
@@ -135,11 +139,9 @@ nav {
 
 #cpu-table {
     font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 300px;
-    margin-left: 35px;
+    border-collapse: collapse;        
     text-align: left;
-    margin-bottom: 20px;
+    width: 90%;
 }
 
 #cpu-table td,
@@ -152,16 +154,16 @@ nav {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
-    color: white;
+    background-color: rgb(32, 32, 32);;
+    color: rgb(84, 155, 125);
 }
 
 #cpu-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgb(84, 155, 125);
 }
 
 #cpu-table tr:nth-child(odd) {
-    background-color: #9b9b9b;
+    background-color: rgb(168, 226, 202);
 }
 
 #cpu-table tr:hover {
@@ -171,7 +173,7 @@ nav {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 50px;
-    width: 400px;
+    width: 600px;
     padding: 10px;
     text-align: center;
     background-color: #f1f1f1;

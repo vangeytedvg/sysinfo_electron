@@ -20,6 +20,15 @@ const CPU_VIRTUALIZATION = document.getElementById("virtualization")
 const CPU_PERFORMANCECORES = document.getElementById("performancecores")
 const CPU_VOLTAGE = document.getElementById("voltage")
 const CPU_MODEL = document.getElementById("model")
+const CPU_CACHE = document.getElementById("cache")
+const CPY_FAMILY = document.getElementById("family")
+
+const PRINTPAGE_TOPDF = document.getElementById("pdfprint")
+
+PRINTPAGE_TOPDF.addEventListener('click', (event) => {
+    const result = app.printCurrentDocument("dd")    
+})
+
 
 updateUI()
 
@@ -40,7 +49,6 @@ async function getCpuSpeed() {
  */
 async function getCpuManuFacturer() {
     console.log("Fetching Data")
-
     /* Get the information */
     /* app.cpuManufacturer calls preload.js */
     const manu = await app.cpuManufacturer()
@@ -58,6 +66,13 @@ async function getCpuManuFacturer() {
     CPU_VOLTAGE.innerText = `${manu.voltage}`
     CPU_PERFORMANCECORES.innerText = `${manu.performanceCores}`
     CPU_MODEL.innerText = `${manu.model}`
+    CPY_FAMILY.innerText = `${manu.family}`
+    const str = JSON.stringify(manu.cache, null, 4)
+    var str_info = ""
+    for (var prop in manu.cache) {
+        str_info += (prop) + " : " + manu.cache[prop] + "\n"
+    }
+    CPU_CACHE.innerText = `${str_info}`
 }
 
 function toggleSpinner() {
@@ -73,6 +88,8 @@ function toggleSpinner() {
     CPU_PERFORMANCECORES.classList.toggle("spin")
     CPU_VOLTAGE.classList.toggle("spin")
     CPU_MODEL.classList.toggle("spin")
+    CPU_CACHE.classList.toggle("spin")
+    CPY_FAMILY.classList.toggle("spin")
 }
 
 /**

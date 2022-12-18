@@ -67,11 +67,11 @@
 }
 
 .selected-bar-item a {
-    /* background-color: rgb(249, 253, 255);    
+     /* background-color: rgb(249, 253, 255);    
     width: 100%;    
     top: 20px;
     z-index: -2%;
-    border-radius: 15px;     */
+    border-radius: 15px;      */
 }
 
 .selected-bar-item i {
@@ -171,6 +171,7 @@
     }
     /* Hide the text from the menu items */
     .nav-links li a p {
+        
         display: none;
     }
     .nav-links li a i {
@@ -181,7 +182,14 @@
     }
 }
 
+/** Needed to avoid anoying scrollbar on the right for some screens **/
+::-webkit-scrollbar {
+    display: none;
+}
 .body-content-nav {
     margin-left: 300px;
     font-size: 18px;
+    display: grid;
+ 
 }
+    

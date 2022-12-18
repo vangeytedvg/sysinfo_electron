@@ -22,6 +22,9 @@ const API = {
     cpuSpeed: (data) => ipcRenderer.invoke("cpu-speed", "get speed"),
     /* --> Calls index.js */
     cpuManufacturer: (data) => ipcRenderer.invoke("cpu-type", "get manufacturer"),
+
+    // Printer API
+    printCurrentDocument: (data) => ipcRenderer.invoke("print-page", ""),
 }
 
 /**

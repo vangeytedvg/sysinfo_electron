@@ -8,13 +8,18 @@
   <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
   <title>System Information App</title>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="../ui/styles/sidebar.css" />
   <link rel="stylesheet" href="../ui/styles/menu.css" />
   <link rel="stylesheet" href="../ui/styles/denkatech.css" />
+
+  <link href="./assets/fonts/css/fontawesome.css" rel="stylesheet">
+  <link href="./assets/fonts/css/brands.css" rel="stylesheet">
+  <link href="./assets/fonts/css/solid.css" rel="stylesheet">
 </head>
 
 <body>
   <!-- ****** Make the window titlebar and buttons  ****** -->
-  <nav>
+  <nav class="nav-fix">
     <div class="left-nav">
       <!--<span class="nav-link">&#x2630;</span>-->
       <div class="app-title">DenkaTech System Info -(CPU)-</div>
@@ -29,119 +34,132 @@
   </nav>
   <!-- ****** End titlebar  ****** -->
 
-  <!-- APP MENU -->
-  <div class="navbar">
-    <a href="index.html">System Information</a>
-    <a href="cpu.html" class="selected-menu">CPU</a>
-    <a href="memory.html">Memory</a>
-    <a href="graphics.html">Graphics</a>
-    <a href="os.html">OS</a>
-    <a href="disks.html">Disks</a>
-    <a href="printer.html">Printer</a>
-    <a href="wifi.html">WIFI</a>
-    <a href="usb.html">USB</a>
-    <a href="audio.html">Audio</a>
-    <a href="bluetooth.html">Bluetooth</a>
-  </div>
-
-  <denka-title caption="CPU Information" /></denka-title>
-
-
-  <div class="flex-container">
-    <div class="card">
-      <h1>Generic information</h1>
-      <table id="cpu-table">
-        <tr>
-          <th>Setting</th>
-          <th>Details</th>
-        </tr>
-        <tr>
-          <td>Manufacturer</td>
-          <td>
-            <div id="manufacturer" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Brand</td>
-          <td>
-            <div id="brand" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Speed</td>
-          <td>
-            <div id="speed" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Minumum Speed</td>
-          <td>
-            <div id="minspeed" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Maximum Speed</td>
-          <td>
-            <div id="maxspeed" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Cores</td>
-          <td>
-            <div id="cores" class="spin"></div>
-          </td>
-        </tr>
-      </table>
+  <!-- APP MENU-->
+  <div>
+    <div class="side-nav">
+      <!-- Top menu & menu button -->
+      <div class="sidebar">
+        <a href="#" class="logo">
+          <img src="../ui/assets/info-icon.png" alt="logo" class="logo-img" />
+          <img src="../ui/assets/info-icon-small.png" alt="logo" class="logo-icon" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html"><i class='fas fa-home' style='font-size:24px'></i><p>System Information</p></a></li>
+          <li class="selected-bar-item"><a href="cpu.html"><i class="fas fa-microchip"></i><p>CPU</p></a></li>
+          <li><a href="memory.html"><i class="fas fa-memory"></i><p>Memory</p></a></li>
+          <li><a href="graphics.html"><i class="fa-regular fa-image"></i></i><p>Graphics</p></a></li>
+          <li><a href="os.html"><i class="fab fa-windows"></i><p>OS</p></a></li>
+          <li><a href="disks.html"><i class="fas fa-save"></i><p>Disks</p></a></li>
+          <li><a href="printer.html"><i class="fas fa-print"></i><p>Printer</p></a></li>
+          <li><a href="wifi.html"><i class="fa-solid fa-signal"></i><p>WIFI</p></a></li>
+          <li><a href="usb.html"><i class="fab fa-usb"></i><p>USB</p></a></li>
+          <li><a href="audio.html"><i class="fas fa-music"></i><p>Audio</p></a></li>
+          <li><a href="bluetooth.html"><i class="fab fa-bluetooth"></i><p>Bluetooth</p></a></li>
+          <div class="active"></div>
+        </ul>
+      </div>
     </div>
-    <!----- Second part of details  -->
-    <div class="card">
-      <h1>Other information</h1>
-      <table id="cpu-table">
-        <tr>
-          <th>Setting</th>
-          <th>Details</th>
-        </tr>
-        <tr>
-          <td>Processors</td>
-          <td>
-            <div id="processors" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Stepping</td>
-          <td>
-            <div id="stepping" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Virtualization</td>
-          <td>
-            <div id="virtualization" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Voltage</td>
-          <td>
-            <div id="voltage" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Performance Cores</td>
-          <td>
-            <div id="performancecores" class="spin"></div>
-          </td>
-        </tr>
-        <tr>
-          <td>Model</td>
-          <td>
-            <div id="model" class="spin"></div>
-          </td>
-        </tr>
-      </table>
+  <!-- END APP MENU -->
+
+    <div class="body-content-nav">      
+      <denka-title caption="CPU Information"></denka-title>                    
+      <div>
+        <button class="button button-blue" id="pdfprint">
+          Print Current Page
+        </button>
+          <table id="cpu-table">
+            <tr>
+              <th>Setting</th>
+              <th>Details</th>
+            </tr>
+            <tr>
+              <td>Manufacturer</td>
+              <td>
+                <div id="manufacturer" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Brand</td>
+              <td>
+                <div id="brand" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Speed</td>
+              <td>
+                <div id="speed" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Minumum Speed</td>
+              <td>
+                <div id="minspeed" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Maximum Speed</td>
+              <td>
+                <div id="maxspeed" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Cores</td>
+              <td>
+                <div id="cores" class="spin"></div>
+              </td>
+            </tr>
+           <tr>
+               <td>Processors</td>
+              <td>
+                <div id="processors" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Stepping</td>
+              <td>
+                <div id="stepping" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Virtualization</td>
+              <td>
+                <div id="virtualization" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Voltage</td>
+              <td>
+                <div id="voltage" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Performance Cores</td>
+              <td>
+                <div id="performancecores" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Model</td>
+              <td>
+                <div id="model" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Family</td>
+              <td>
+                <div id="family" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Cache</td>
+              <td>
+                <div id="cache" class="spin"></div>
+              </td>
+            </tr>
+          </table>        
+      </div>
     </div>
-  </div>
-
-
+  
   <!-- Defered Scripts -->
   <script src="../../ipc/cupurenderer.js" defer type="module"></script>
   <!-- Window events script -->

@@ -10,7 +10,7 @@ class DenkaTitle extends HTMLElement {
             font-weight: 700;
             
             font-size: 2.5em;
-            text-align: center;
+            
             color: rgb(14, 129, 81);
             margin: 50px;
         }

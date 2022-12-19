@@ -10,6 +10,8 @@ const MEM_AVAILABLE_MEMORY = document.getElementById("totalmemory")
 const MEM_USED_MEMORY = document.getElementById("usedmemory")
 const MEM_FREE_MEMORY = document.getElementById("freememory")
 const MEM_SWAP_TOTAL = document.getElementById("swaptotal")
+const MEM_SWAP_USED = document.getElementById("swapused")
+const MEM_SWAP_FREE = document.getElementById("swapfree")
 
 
 updateUI()
@@ -21,7 +23,9 @@ async function getMemoryInformation() {
     MEM_AVAILABLE_MEMORY.innerText = `${Math.round((memo.total / 1000000)/1000)} Gb`
     MEM_USED_MEMORY.innerText = `${Math.round(memo.used / 1000000000)} Gb`
     MEM_FREE_MEMORY.innerText = `${Math.floor(memo.free / 1000000000)} Gb`
-    MEM_SWAP_TOTAL.innerText = `${(memo.swaptotal) / 1000000000} Gb`
+    MEM_SWAP_TOTAL.innerText = `${memo.swaptotal / 1000000000} Gb`
+    MEM_SWAP_USED.innerText = `${memo.swapused / 1000000000} Gb`
+    MEM_SWAP_FREE.innerText = `${memo.swapfree / 1000000000} Gb`
 }
 
 async function updateUI() {
@@ -34,4 +38,6 @@ function toggleSpinner() {
     MEM_USED_MEMORY.classList.toggle("spin")
     MEM_FREE_MEMORY.classList.toggle("spin")
     MEM_SWAP_TOTAL.classList.toggle("spin")
+    MEM_SWAP_USED.classList.toggle("spin")
+    MEM_SWAP_FREE.classList.toggle("spin")
 }

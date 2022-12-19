@@ -148,6 +148,11 @@ ipcMain.handle("mem-system-info", async(_, data) => {
     return mem_info;
 })
 
+ipcMain.handle("mem-layout", async(_, data) => {
+    const mem_info = await mem();
+    return mem_info;
+})
+
 /***************************** WINDOW SUPPORT */
 /** Window events (renderer process ==> main process), no return value from main*/
 ipcMain.on("app-close", () => {

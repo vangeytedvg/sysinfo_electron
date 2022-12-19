@@ -186,10 +186,17 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
 .body-content-nav {
     margin-left: 300px;
     font-size: 18px;
     display: grid;
  
+}
+
+/* Print buttons */
+.control-buttons {
+    display: flex;    
+    justify-content:start;
 }
     

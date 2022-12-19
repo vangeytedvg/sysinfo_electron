@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../ui/styles/sidebar.css" />
   <link rel="stylesheet" href="../ui/styles/menu.css" />
   <link rel="stylesheet" href="../ui/styles/denkatech.css" />
-
+  <!-- Font awesome integration -->
   <link href="./assets/fonts/css/fontawesome.css" rel="stylesheet">
   <link href="./assets/fonts/css/brands.css" rel="stylesheet">
   <link href="./assets/fonts/css/solid.css" rel="stylesheet">
@@ -63,14 +63,18 @@
 
     <div class="body-content-nav">      
       <denka-title caption="CPU Information"></denka-title>                    
-      <div>
+      <div class="control-buttons">
         <button class="button button-blue" id="printprinter">
           Print Page
         </button>
         <button class="button button-blue" id="pdfprint">
           Make PDF 
         </button>        
+      </div>
+      <div>
+        
           <table id="cpu-table">
+            
             <tr>
               <th>Setting</th>
               <th>Details</th>
@@ -79,6 +83,12 @@
               <td>Manufacturer</td>
               <td>
                 <div id="manufacturer" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Vendor</td>
+              <td>
+                <div id="vendor" class="spin"></div>
               </td>
             </tr>
             <tr>
@@ -151,6 +161,18 @@
               <td>Family</td>
               <td>
                 <div id="family" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Revision</td>
+              <td>
+                <div id="revision" class="spin"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Socket</td>
+              <td>
+                <div id="socket" class="spin"></div>
               </td>
             </tr>
             <tr>

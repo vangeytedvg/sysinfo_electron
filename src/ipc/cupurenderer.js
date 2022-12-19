@@ -11,8 +11,8 @@ const CPU_SPEED_LABEL = document.getElementById("speed")
 const CPU_MINIMUM_SPEED_LABEL = document.getElementById("minspeed")
 const CPU_MAXIMUM_SPEED_LABEL = document.getElementById("maxspeed")
 const CPU_CORES_LABEL = document.getElementById("cores")
-
 const CPU_MANUFACTURER = document.getElementById("manufacturer")
+const CPU_VENDOR = document.getElementById("vendor")
 const CPU_BRAND = document.getElementById("brand")
 const CPU_PROCESSORS = document.getElementById("processors")
 const CPU_STEPPING = document.getElementById("stepping")
@@ -23,19 +23,26 @@ const CPU_MODEL = document.getElementById("model")
 const CPU_CACHE = document.getElementById("cache")
 const CPY_FAMILY = document.getElementById("family")
 
+// Print buttons
 const PRINTPAGE_TOPRINTER = document.getElementById("printprinter")
 const PRINTPAGE_TOPDF = document.getElementById("pdfprint")
 
+/**
+ * Print the document
+ */
 PRINTPAGE_TOPRINTER.addEventListener('click', (event) => {    
     const result = app.printCurrentDocument();
 })
 
+/**
+ * Create a PDF file from the current document
+ */
 PRINTPAGE_TOPDF.addEventListener('click', async (event) =>  {
     const result = await app.printCurrentDocumentToPDF()   
     console.log(result) 
 })
 
-
+/* Call the screen painter */
 updateUI()
 
 /**
@@ -61,6 +68,7 @@ async function getCpuManuFacturer() {
     console.log(manu);
     toggleSpinner();
     CPU_MANUFACTURER.innerText = `${manu.manufacturer}`
+    CPU_VENDOR.innerText = `${manu.vendor}`
     CPU_BRAND.innerText = `${manu.brand}`
     CPU_SPEED_LABEL.innerText = `${manu.speed}`
     CPU_MAXIMUM_SPEED_LABEL.innerText = `${manu.speedMax}`
@@ -81,8 +89,12 @@ async function getCpuManuFacturer() {
     CPU_CACHE.innerText = `${str_info}`
 }
 
+/**
+ * Turn the spinners off
+ */
 function toggleSpinner() {
     CPU_MANUFACTURER.classList.toggle("spin")
+    CPU_VENDOR.classList.toggle("spin")
     CPU_BRAND.classList.toggle("spin")
     CPU_SPEED_LABEL.classList.toggle("spin")
     CPU_MAXIMUM_SPEED_LABEL.classList.toggle("spin")

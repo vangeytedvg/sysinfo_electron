@@ -103,10 +103,11 @@ ipcMain.handle("print-page-pdf", async (_, data) => {
                 fs.writeFile(filePath, data, (error) => {
                   if (error) throw error
                   console.log(`Wrote PDF successfully to ${filePath}`)
+                  // Show the created file.
                   shell.openExternal(filePath)
                   return filePath
                 })
-              }).catch(error => {                
+              }).catch(error => {                                            
                 console.log(`Failed to write PDF to ${filePath}: `, error)
                 return error
               })

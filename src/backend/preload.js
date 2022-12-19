@@ -25,7 +25,7 @@ const API = {
 
     // Printer API
     printCurrentDocument: (data) => ipcRenderer.invoke("print-page", ""),
-    printCurrentDocumentToPDF: (data) => ipcRenderer.invoke("print-page-pdf", ""),
+    printCurrentDocumentToPDF: (data) => ipcRenderer.invoke("print-page-pdf"),
 }
 
 /**

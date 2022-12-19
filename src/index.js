@@ -1,6 +1,6 @@
 const { fail } = require('assert');
-const { app, BrowserWindow, ipcMain } = require('electron');
-const { cp } = require('fs');
+const { app, BrowserWindow, ipcMain, dialog, shell} = require('electron');
+const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { currentLoad, cpu, cpuCurrentSpeed } = require('systeminformation');
@@ -24,7 +24,7 @@ app.whenReady().then(main);
  * Create the main window, this function also looks in the current
  * directory for the app's icon.
  */
-async function main() {    
+async function main() {
     window = new BrowserWindow({
         transparent: true,
         width: 1024,
@@ -55,24 +55,24 @@ async function main() {
 
 /***************************** PRINTING SUPPORT */
 var options = {
-     silent: false,
-     printBackground: false,
-     color: true,
-     margin: {
-         marginType: 'printableArea'
-     },
-     landscape: false,
-     pagesPerSheet: 1,
-     collate: false,
-     copies: 1,
-     header: "DenkaTech System Information",
-     footer: "Copyright (2022-2023)"
+    silent: false,
+    printBackground: false,
+    color: true,
+    margin: {
+        marginType: 'printableArea'
+    },
+    landscape: false,
+    pagesPerSheet: 1,
+    collate: false,
+    copies: 1,
+    header: "DenkaTech System Information",
+    footer: "Copyright (2022-2023)"
 }
 
 /**
  * Normal print
  */
-ipcMain.handle("print-page", async(_,data) => {    
+ipcMain.handle("print-page", async (_, data) => {
     let win = BrowserWindow.getFocusedWindow();
     win.webContents.print(options, (success, failureReason) => {
         if (!success) console.log(failureReason);
@@ -82,22 +82,44 @@ ipcMain.handle("print-page", async(_,data) => {
 
 /**
  * PDF print
+ * This method will first as the path to the new file, then save it at
+ * the selected location.
  */
-ipcMain.handle("print-page-pdf", async(event,data) => {
-    let win = BrowserWindow.getFocusedWindow();    
-    win.webContents.print(options, (success, failureReason) => {
-        if (!success) console.log(failureReason);
-        console.log("Done")
-        return "clear"
+ipcMain.handle("print-page-pdf", async (_, data) => {
+    let win = BrowserWindow.getFocusedWindow();
+    let options = {
+        title: "Select where the PDF file should be saved",
+        //defaultPath: "c:/users/absolute/path",
+        buttonLabel: "Generate PDF",
+        filters: [
+            { name: 'PDF Files', extensions: ['pdf'] }
+        ]
+    }
+    await dialog.showSaveDialog(options).then(filename => {        
+        const { canceled, filePath } = filename;
+        if (!canceled) {            
+            // Anonymous method with promise        
+            win.webContents.printToPDF({}).then(data => {
+                fs.writeFile(filePath, data, (error) => {
+                  if (error) throw error
+                  console.log(`Wrote PDF successfully to ${filePath}`)
+                  shell.openExternal(filePath)
+                  return filePath
+                })
+              }).catch(error => {                
+                console.log(`Failed to write PDF to ${filePath}: `, error)
+                return error
+              })
+        }
     })
 })
 
 
 /***************************** SYSINFO SUPPORT */
- 
+
 /** 
  * Get the current load of the cpu
- */ 
+ */
 ipcMain.handle("cpu-get-load", async (_, data) => {
     const usage = await currentLoad();
     return usage;
@@ -115,7 +137,7 @@ ipcMain.handle("cpu-speed", async (_, data) => {
  * CPU Generic information
  */
 ipcMain.handle('cpu-type', async (_, data) => {
-    const cpu_info = await cpu();    
+    const cpu_info = await cpu();
     return cpu_info;
 })
 

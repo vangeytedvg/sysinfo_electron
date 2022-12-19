@@ -26,12 +26,13 @@ const CPY_FAMILY = document.getElementById("family")
 const PRINTPAGE_TOPRINTER = document.getElementById("printprinter")
 const PRINTPAGE_TOPDF = document.getElementById("pdfprint")
 
-PRINTPAGE_TOPRINTER.addEventListener('click', (event) => {
-    const result = app.printCurrentDocument("dd")    
+PRINTPAGE_TOPRINTER.addEventListener('click', (event) => {    
+    const result = app.printCurrentDocument();
 })
 
-PRINTPAGE_TOPDF.addEventListener('click', (event) => {
-    const result = app.printCurrentDocumentToPDF("dd")    
+PRINTPAGE_TOPDF.addEventListener('click', async (event) =>  {
+    const result = await app.printCurrentDocumentToPDF()   
+    console.log(result) 
 })
 
 

@@ -78,6 +78,7 @@ ipcMain.handle("print-page", async (_, data) => {
         if (!success) console.log(failureReason);
         console.log("Done")
     })
+    return "Printed"
 })
 
 /**

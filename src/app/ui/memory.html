@@ -60,19 +60,49 @@
         </ul>
       </div>
     </div>
-    <div class="body-content-nav">      
-      <denka-title caption="Memory Information"></denka-title>      
-        <button class="button button-white">White</button>
-        <button class="button button-gray">Grey</button>
-        <button id="greenButton" class="button button-green">Green</button>
-        <button class="button button-blue">Blue</button>
-        <button class="button button-gray">Grey</button>
-        <button class="button button-green">Green</button>
-        <button class="button button-blue">Blue</button>
-        <button class="button disabled">Oink</button>
+    <div class="body-content-nav">
+      <denka-title caption="Memory Information"></denka-title>
+      <div class="control-buttons">
+        <button class="button button-blue" id="printprinter">
+          Print Page
+        </button>
+        <button class="button button-blue" id="pdfprint">
+          Make PDF
+        </button>
+      </div>
+      <div>
+        <table id="cpu-table">
+          <tr>
+            <th>Setting</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Total memory</td>
+            <td>
+              <div id="totalmemory" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Used memory</td>
+            <td>
+              <div id="usedmemory" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Free memory</td>
+            <td>
+              <div id="freememory" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Swap total</td>
+            <td>
+              <div id="swaptotal" class="spin"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-    
-    
 
     <!-- Window events script -->
     <script src="../../ipc/window.js" defer type="module"></script>

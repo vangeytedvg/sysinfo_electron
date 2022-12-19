@@ -3,7 +3,7 @@ const { app, BrowserWindow, ipcMain, dialog, shell} = require('electron');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const { currentLoad, cpu, cpuCurrentSpeed } = require('systeminformation');
+const { currentLoad, cpu, cpuCurrentSpeed, mem, memLayout } = require('systeminformation');
 
 let window;
 let maxiwin = true;  // Tracks the state of the window
@@ -117,7 +117,7 @@ ipcMain.handle("print-page-pdf", async (_, data) => {
 
 
 /***************************** SYSINFO SUPPORT */
-
+/**** CPU */
 /** 
  * Get the current load of the cpu
  */
@@ -140,6 +140,12 @@ ipcMain.handle("cpu-speed", async (_, data) => {
 ipcMain.handle('cpu-type', async (_, data) => {
     const cpu_info = await cpu();
     return cpu_info;
+})
+
+/**** MEMORY */
+ipcMain.handle("mem-system-info", async(_, data) => {
+    const mem_info = await mem();
+    return mem_info;
 })
 
 /***************************** WINDOW SUPPORT */

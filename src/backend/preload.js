@@ -23,6 +23,10 @@ const API = {
     /* --> Calls index.js */
     cpuManufacturer: (data) => ipcRenderer.invoke("cpu-type", "get manufacturer"),
 
+    // Memory API
+    memSystemMemory: (data) => ipcRenderer.invoke("mem-system-info"),
+    memMemoryLayout: (data) => ipcRenderer.invoke("mem-layout"),
+
     // Printer API
     printCurrentDocument: (data) => ipcRenderer.invoke("print-page", ""),
     printCurrentDocumentToPDF: (data) => ipcRenderer.invoke("print-page-pdf"),

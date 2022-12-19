@@ -1,16 +1,37 @@
 /**
- * cpurenderer.js
- * Link between the HTML and main process (index.js in this case)
- * created : 26/11/2022
+ * memory.js
+ * Renderer process for the memory details page
+ * Created : 19/12/2022 by DVG
  */
 
-/**
- * Get references to ui elements
- */
-// const greenButton = document.getElementById("greenButton")
-// const SPINNER = document.getElementById("spinner")
-// greenButton.addEventListener("click", changeSpinner)
+console.log("Memory Renderer Loaded")
 
-// function changeSpinner() {
-//     SPINNER.classList.toggle("spin")
-// }
+const MEM_AVAILABLE_MEMORY = document.getElementById("totalmemory")
+const MEM_USED_MEMORY = document.getElementById("usedmemory")
+const MEM_FREE_MEMORY = document.getElementById("freememory")
+const MEM_SWAP_TOTAL = document.getElementById("swaptotal")
+
+
+updateUI()
+
+async function getMemoryInformation() {
+    const memo = await app.memSystemMemory()
+    toggleSpinner()
+    console.log(memo)
+    MEM_AVAILABLE_MEMORY.innerText = `${Math.round((memo.total / 1000000)/1000)} Gb`
+    MEM_USED_MEMORY.innerText = `${Math.round(memo.used / 1000000000)} Gb`
+    MEM_FREE_MEMORY.innerText = `${Math.floor(memo.free / 1000000000)} Gb`
+    MEM_SWAP_TOTAL.innerText = `${(memo.swaptotal) / 1000000000} Gb`
+}
+
+async function updateUI() {
+    //await getCpuSpeed()
+    await getMemoryInformation()
+}
+
+function toggleSpinner() {
+    MEM_AVAILABLE_MEMORY.classList.toggle("spin")
+    MEM_USED_MEMORY.classList.toggle("spin")
+    MEM_FREE_MEMORY.classList.toggle("spin")
+    MEM_SWAP_TOTAL.classList.toggle("spin")
+}

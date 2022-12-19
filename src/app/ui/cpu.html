@@ -44,159 +44,179 @@
           <img src="../ui/assets/info-icon-small.png" alt="logo" class="logo-icon" />
         </a>
         <ul class="nav-links">
-          <li><a href="index.html"><i class='fas fa-home' style='font-size:24px'></i><p>System Information</p></a></li>
-          <li class="selected-bar-item"><a href="cpu.html"><i class="fas fa-microchip"></i><p>CPU</p></a></li>
-          <li><a href="memory.html"><i class="fas fa-memory"></i><p>Memory</p></a></li>
-          <li><a href="graphics.html"><i class="fa-regular fa-image"></i></i><p>Graphics</p></a></li>
-          <li><a href="os.html"><i class="fab fa-windows"></i><p>OS</p></a></li>
-          <li><a href="disks.html"><i class="fas fa-save"></i><p>Disks</p></a></li>
-          <li><a href="printer.html"><i class="fas fa-print"></i><p>Printer</p></a></li>
-          <li><a href="wifi.html"><i class="fa-solid fa-signal"></i><p>WIFI</p></a></li>
-          <li><a href="usb.html"><i class="fab fa-usb"></i><p>USB</p></a></li>
-          <li><a href="audio.html"><i class="fas fa-music"></i><p>Audio</p></a></li>
-          <li><a href="bluetooth.html"><i class="fab fa-bluetooth"></i><p>Bluetooth</p></a></li>
+          <li><a href="index.html"><i class='fas fa-home' style='font-size:24px'></i>
+              <p>System Information</p>
+            </a></li>
+          <li class="selected-bar-item"><a href="cpu.html"><i class="fas fa-microchip"></i>
+              <p>CPU</p>
+            </a></li>
+          <li><a href="memory.html"><i class="fas fa-memory"></i>
+              <p>Memory</p>
+            </a></li>
+          <li><a href="graphics.html"><i class="fa-regular fa-image"></i></i>
+              <p>Graphics</p>
+            </a></li>
+          <li><a href="os.html"><i class="fab fa-windows"></i>
+              <p>OS</p>
+            </a></li>
+          <li><a href="disks.html"><i class="fas fa-save"></i>
+              <p>Disks</p>
+            </a></li>
+          <li><a href="printer.html"><i class="fas fa-print"></i>
+              <p>Printer</p>
+            </a></li>
+          <li><a href="wifi.html"><i class="fa-solid fa-signal"></i>
+              <p>WIFI</p>
+            </a></li>
+          <li><a href="usb.html"><i class="fab fa-usb"></i>
+              <p>USB</p>
+            </a></li>
+          <li><a href="audio.html"><i class="fas fa-music"></i>
+              <p>Audio</p>
+            </a></li>
+          <li><a href="bluetooth.html"><i class="fab fa-bluetooth"></i>
+              <p>Bluetooth</p>
+            </a></li>
           <div class="active"></div>
         </ul>
       </div>
     </div>
-  <!-- END APP MENU -->
+    <!-- END APP MENU -->
 
-    <div class="body-content-nav">      
-      <denka-title caption="CPU Information"></denka-title>                    
+    <div class="body-content-nav">
+      <denka-title caption="CPU Information"></denka-title>
       <div class="control-buttons">
         <button class="button button-blue" id="printprinter">
           Print Page
         </button>
         <button class="button button-blue" id="pdfprint">
-          Make PDF 
-        </button>        
+          Make PDF
+        </button>
       </div>
       <div>
-        
-          <table id="cpu-table">
-            
-            <tr>
-              <th>Setting</th>
-              <th>Details</th>
-            </tr>
-            <tr>
-              <td>Manufacturer</td>
-              <td>
-                <div id="manufacturer" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Vendor</td>
-              <td>
-                <div id="vendor" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Brand</td>
-              <td>
-                <div id="brand" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Speed</td>
-              <td>
-                <div id="speed" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Minumum Speed</td>
-              <td>
-                <div id="minspeed" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Maximum Speed</td>
-              <td>
-                <div id="maxspeed" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Cores</td>
-              <td>
-                <div id="cores" class="spin"></div>
-              </td>
-            </tr>
-           <tr>
-               <td>Processors</td>
-              <td>
-                <div id="processors" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Stepping</td>
-              <td>
-                <div id="stepping" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Virtualization</td>
-              <td>
-                <div id="virtualization" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Voltage</td>
-              <td>
-                <div id="voltage" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Performance Cores</td>
-              <td>
-                <div id="performancecores" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Model</td>
-              <td>
-                <div id="model" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Family</td>
-              <td>
-                <div id="family" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Revision</td>
-              <td>
-                <div id="revision" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Socket</td>
-              <td>
-                <div id="socket" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Cache</td>
-              <td>
-                <div id="cache" class="spin"></div>
-              </td>
-            </tr>
-            <tr>
-              <td>Flags</td>
-              <td>
-                <div id="flags" class="spin"></div>
-              </td>
-            </tr>
-          </table>        
+        <table id="cpu-table">
+          <tr>
+            <th>Setting</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Manufacturer</td>
+            <td>
+              <div id="manufacturer" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Vendor</td>
+            <td>
+              <div id="vendor" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Brand</td>
+            <td>
+              <div id="brand" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Speed</td>
+            <td>
+              <div id="speed" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Minumum Speed</td>
+            <td>
+              <div id="minspeed" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Maximum Speed</td>
+            <td>
+              <div id="maxspeed" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Cores</td>
+            <td>
+              <div id="cores" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Processors</td>
+            <td>
+              <div id="processors" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Stepping</td>
+            <td>
+              <div id="stepping" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Virtualization</td>
+            <td>
+              <div id="virtualization" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Voltage</td>
+            <td>
+              <div id="voltage" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Performance Cores</td>
+            <td>
+              <div id="performancecores" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Model</td>
+            <td>
+              <div id="model" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Family</td>
+            <td>
+              <div id="family" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Revision</td>
+            <td>
+              <div id="revision" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Socket</td>
+            <td>
+              <div id="socket" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Cache</td>
+            <td>
+              <div id="cache" class="spin"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Flags</td>
+            <td>
+              <div id="flags" class="spin"></div>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
-  
-  <!-- Defered Scripts -->
-  <script src="../../ipc/cupurenderer.js" defer type="module"></script>
-  <!-- Window events script -->
-  <script src="../../ipc/window.js" defer type="module"></script>
-  <!-- DenkaTech Components -->
-  <script src="./components/Denkacomponents.js"></script>
+
+    <!-- Defered Scripts -->
+    <script src="../../ipc/cupurenderer.js" defer type="module"></script>
+    <!-- Window events script -->
+    <script src="../../ipc/window.js" defer type="module"></script>
+    <!-- DenkaTech Components -->
+    <script src="./components/Denkacomponents.js"></script>
 </body>
 
 </html>

@@ -4,6 +4,8 @@
  * created : 26/11/2022
  */
 
+console.log("CPU Renderer Loaded")
+
 
 /**
  * Get references to ui elements
@@ -64,7 +66,6 @@ async function getCpuSpeed() {
  * Get CPU Manufacturor details
  */
 async function getCpuManuFacturer() {
-    console.log("Fetching Data")
     /* Get the information */
     /* app.cpuManufacturer calls preload.js */
     const manu = await app.cpuManufacturer()

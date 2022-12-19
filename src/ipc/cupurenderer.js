@@ -4,6 +4,7 @@
  * created : 26/11/2022
  */
 
+
 /**
  * Get references to ui elements
  */
@@ -21,8 +22,10 @@ const CPU_PERFORMANCECORES = document.getElementById("performancecores")
 const CPU_VOLTAGE = document.getElementById("voltage")
 const CPU_MODEL = document.getElementById("model")
 const CPU_CACHE = document.getElementById("cache")
-const CPY_FAMILY = document.getElementById("family")
-
+const CPU_FAMILY = document.getElementById("family")
+const CPU_REVISION = document.getElementById("revision")
+const CPU_SOCKET = document.getElementById("socket")
+const CPU_FLAGS = document.getElementById("flags")
 // Print buttons
 const PRINTPAGE_TOPRINTER = document.getElementById("printprinter")
 const PRINTPAGE_TOPDF = document.getElementById("pdfprint")
@@ -80,13 +83,17 @@ async function getCpuManuFacturer() {
     CPU_VOLTAGE.innerText = `${manu.voltage}`
     CPU_PERFORMANCECORES.innerText = `${manu.performanceCores}`
     CPU_MODEL.innerText = `${manu.model}`
-    CPY_FAMILY.innerText = `${manu.family}`
+    CPU_FAMILY.innerText = `${manu.family}`
+    CPU_REVISION.innerText = `${manu.revision}`
+    CPU_SOCKET.innerText = `${manu.socket}`
+    // Need some formatting for the cache data
     const str = JSON.stringify(manu.cache, null, 4)
     var str_info = ""
     for (var prop in manu.cache) {
         str_info += (prop) + " : " + manu.cache[prop] + "\n"
     }
     CPU_CACHE.innerText = `${str_info}`
+    CPU_FLAGS.innerText = `${manu.flags}`
 }
 
 /**
@@ -107,7 +114,10 @@ function toggleSpinner() {
     CPU_VOLTAGE.classList.toggle("spin")
     CPU_MODEL.classList.toggle("spin")
     CPU_CACHE.classList.toggle("spin")
-    CPY_FAMILY.classList.toggle("spin")
+    CPU_FAMILY.classList.toggle("spin")
+    CPU_REVISION.classList.toggle("spin")
+    CPU_SOCKET.classList.toggle("spin")
+    CPU_FLAGS.classList.toggle("spin")
 }
 
 /**

@@ -102,15 +102,28 @@ ipcMain.handle("print-page-pdf", async (_, data) => {
             // Anonymous method with promise        
             win.webContents.printToPDF({}).then(data => {
                 fs.writeFile(filePath, data, (error) => {
-                  if (error) throw error
-                  console.log(`Wrote PDF successfully to ${filePath}`)
+                  if (error) throw error            
                   // Show the created file.
-                  shell.openExternal(filePath)
-                  return filePath
+                  const options = {
+                    message: `PDF Created at: ${filePath}`,
+                    buttons: ["Yes", "No"],
+                    type: "info",
+                    title: "PDF Creation",
+                    detail: "PDF creation request completed!, Would you like to see it?",                    
+                  }
+                  const retval = dialog.showMessageBoxSync(win, options)
+                  if (retval === 0) shell.openExternal(filePath)                  
+                  return
                 })
-              }).catch(error => {                                            
-                console.log(`Failed to write PDF to ${filePath}: `, error)
-                return error
+              }).catch(error => {                                         
+                const options = {
+                    message: `PDF Creation failed`,                    
+                    type: "error",
+                    title: "PDF Creation",
+                    detail: `PDF creation request failed ${error}`,
+                  }
+                const retval = dialog.showMessageBoxSync(win, options)   
+                console.log(`Failed to write PDF to ${filePath}: `, error)                
               })
         }
     })

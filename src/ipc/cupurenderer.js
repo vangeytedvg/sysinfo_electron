@@ -44,7 +44,6 @@ PRINTPAGE_TOPRINTER.addEventListener('click', (event) => {
  */
 PRINTPAGE_TOPDF.addEventListener('click', async (event) =>  {
     const result = await app.printCurrentDocumentToPDF()   
-    console.log(result) 
 })
 
 /* Call the screen painter */

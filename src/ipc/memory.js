@@ -13,6 +13,9 @@ const MEM_SWAP_TOTAL = document.getElementById("swaptotal")
 const MEM_SWAP_USED = document.getElementById("swapused")
 const MEM_SWAP_FREE = document.getElementById("swapfree")
 
+// Get the table that will hold the details of the memory layout
+const MemLayoutTable = document.getElementById("memlayouts")
+
 
 updateUI()
 
@@ -28,9 +31,26 @@ async function getMemoryInformation() {
     MEM_SWAP_FREE.innerText = `${memo.swapfree / 1000000000} Gb`
 }
 
-async function updateUI() {
-    //await getCpuSpeed()
+async function getMemoryLayout() {
+    const memoLayout = await app.memMemoryLayout()
+    // This loops through each of the objects in the memoLayout array.
+    memoLayout.forEach(layout => {
+        // Insert a full-table-width row as a separator
+        let kwk = MemLayoutTable.insertRow(-1).insertCell(0).colSpan = 2
+        //trot.colSpan = 2
+        for (let key in layout) {
+            let newRow = MemLayoutTable.insertRow(-1)
+            let colSetting = newRow.insertCell(0)
+            let colDetails = newRow.insertCell(1)
+            colSetting.innerText = `${key}`
+            colDetails.innerText = `${layout[key]}`                    
+        }
+      })
+}
+
+async function updateUI() {    
     await getMemoryInformation()
+    await getMemoryLayout()
 }
 
 function toggleSpinner() {

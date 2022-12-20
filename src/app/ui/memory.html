@@ -60,6 +60,7 @@
         </ul>
       </div>
     </div>
+
     <div class="body-content-nav">
       <denka-title caption="Memory Information"></denka-title>
       <div class="control-buttons">
@@ -71,7 +72,7 @@
         </button>
       </div>
       <div>
-        <table id="cpu-table">
+        <table class="cpu-table">
           <tr>
             <th>Setting</th>
             <th>Details</th>
@@ -113,6 +114,16 @@
             </td>
           </tr>
         </table>
+        <p><h2>Memory layout details</h2></p>
+        <!-- Table that will be filled in from within the renderer process -->
+        <div>
+          <table class="cpu-table" id="memlayouts">
+            <tr>
+              <th>Setting</th>
+              <th>Details</th>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
 

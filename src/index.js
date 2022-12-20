@@ -85,6 +85,7 @@ ipcMain.handle("print-page", async (_, data) => {
  * PDF print
  * This method will first as the path to the new file, then save it at
  * the selected location.
+ * It uses 'dialog' to generate a messagebox
  */
 ipcMain.handle("print-page-pdf", async (_, data) => {
     let win = BrowserWindow.getFocusedWindow();
@@ -106,7 +107,7 @@ ipcMain.handle("print-page-pdf", async (_, data) => {
                   // Show the created file.
                   const options = {
                     message: `PDF Created at: ${filePath}`,
-                    buttons: ["Yes", "No"],
+                    buttons: ["&Yes", "&No"],
                     type: "info",
                     title: "PDF Creation",
                     detail: "PDF creation request completed!, Would you like to see it?",                    
@@ -163,7 +164,9 @@ ipcMain.handle("mem-system-info", async(_, data) => {
 })
 
 ipcMain.handle("mem-layout", async(_, data) => {
-    const mem_info = await mem();
+    console.log("In mem-layout")
+    const mem_info = await memLayout();
+    console.log(mem_info)
     return mem_info;
 })
 

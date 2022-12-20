@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
+    <title>System Information App</title>
+    
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../ui/styles/menu.css" />
+  </head>
+  <body>
+    <!-- ****** Make the window titlebar and buttons  ****** -->
+    <nav>
+      <div class="left-nav">
+        <!--<span class="nav-link">&#x2630;</span>-->
+        <div class="app-title">DenkaTech System Info</div>
+      </div>
+
+      <div class="right-nav">
+        <span class="nav-link" id="minimize">🗕</span>
+        <span class="nav-link" id="maximize">🗖</span>
+        <span class="nav-link" id="close-app">⊗</span>
+      </div>
+    </nav>
+    <!-- ****** End titlebar  ****** -->
+
+    <!-- APP MENU -->
+    <div class="navbar">
+      <a href="index.html" class="selected-menu">System Information</a>
+      <a href="cpu.html">CPU</a>
+      <a href="memory.html">Memory</a>
+      <a href="graphics.html">Graphics</a>
+      <a href="os.html">OS</a>
+      <a href="disks.html">Disks</a>
+      <a href="printer.html">Printer</a>
+      <a href="wifi.html">WIFI</a>
+      <a href="usb.html">USB</a>
+      <a href="audio.html">Audio</a>
+      <a href="bluetooth.html">Bluetooth</a>
+    </div>
+
+    <!-- Data -->    
+    <denka-title caption="DenkaTech Software - System Information Utility"></denka-title>
+    
+    <!-- CPU Progressbar -->
+    <section>
+      <h1 class="header">CPU Overview</h1>
+      <div id="outer-bar">
+        <div id="inner-bar">
+          <div id="inner-pct">0%</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h4 id="speed-cpu">Loading</h4>
+    </section>
+    <!-- Defered Scripts -->
+    <script src="../../ipc/renderer.js" defer type="module"></script>
+    <!-- Window events script -->
+    <script src="../../ipc/window.js" defer type="module"></script>
+    <!-- DenkaTech Components -->
+    <script src="./components/Denkacomponents.js"></script>
+  </body>
+</html>

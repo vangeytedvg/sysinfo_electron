@@ -16,6 +16,24 @@ const MEM_SWAP_FREE = document.getElementById("swapfree")
 // Get the table that will hold the details of the memory layout
 const MemLayoutTable = document.getElementById("memlayouts")
 
+const PRINTPAGE_TOPRINTER = document.getElementById("printprinter")
+const PRINTPAGE_TOPDF = document.getElementById("pdfprint")
+
+/**
+ * Print the document
+ */
+PRINTPAGE_TOPRINTER.addEventListener('click', (event) => {    
+    const result = app.printCurrentDocument();
+})
+
+/**
+ * Create a PDF file from the current document
+ */
+PRINTPAGE_TOPDF.addEventListener('click', async (event) =>  {
+    const result = await app.printCurrentDocumentToPDF()   
+})
+
+
 
 updateUI()
 

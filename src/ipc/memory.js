@@ -34,10 +34,15 @@ async function getMemoryInformation() {
 async function getMemoryLayout() {
     const memoLayout = await app.memMemoryLayout()
     // This loops through each of the objects in the memoLayout array.
+    let rownr = 0
     memoLayout.forEach(layout => {
-        // Insert a full-table-width row as a separator
-        let kwk = MemLayoutTable.insertRow(-1).insertCell(0).colSpan = 2
-        //trot.colSpan = 2
+        rownr++
+        let kwk = MemLayoutTable.insertRow(-1)
+        let trot = kwk.insertCell(0)
+        // Set colspan and style of new row
+        trot.colSpan = 2
+        trot.innerText= `Layout nr : ${rownr}`        
+        trot.style.backgroundColor = "#ddd"
         for (let key in layout) {
             let newRow = MemLayoutTable.insertRow(-1)
             let colSetting = newRow.insertCell(0)
